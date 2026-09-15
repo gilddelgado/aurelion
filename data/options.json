@@ -1,0 +1,124 @@
+{
+  "car": {
+    "name": "Aventador LP 700-4",
+    "body": "Coupé",
+    "specs": [
+      { "id": "power", "value": "700", "unit": "CV", "label": "Power at 8,250 rpm", "source": "caricos" },
+      { "id": "torque", "value": "690", "unit": "Nm", "label": "Torque at 5,500 rpm", "source": "caricos" },
+      { "id": "accel", "value": "2.9", "unit": "s", "label": "0–100 km/h", "source": "caricos" },
+      { "id": "vmax", "value": "350", "unit": "km/h", "label": "Top speed", "source": "caricos" },
+      { "id": "weight", "value": "1,575", "unit": "kg", "label": "Dry weight", "source": "caricos" },
+      { "id": "gearbox", "value": "ISR", "unit": "7-speed", "label": "Independent Shifting Rods gearbox", "source": "caricos" }
+    ]
+  },
+  "sources": [
+    { "id": "gtspirit", "title": "GTspirit: Lamborghini LP700-4 Aventador, all the colours (2012)", "url": "https://gtspirit.com/2012/04/03/lamborghini-lp700-4-aventador-all-the-colours/" },
+    { "id": "caricos", "title": "Caricos: 2012 Lamborghini Aventador LP 700-4 press information", "url": "https://www.caricos.com/cars/l/lamborghini/2012_lamborghini_aventador_lp700-4/" },
+    { "id": "lambocars-order", "title": "Lambocars: Aventador LP700-4 Roadster custom order", "url": "https://www.lambocars.com/lamborghini-aventador-lp700-4-roadster-custom-order/" },
+    { "id": "lambodiecast", "title": "LamboDieCast: AUTOart 1/18 Aventador LP700-4 review (factory options)", "url": "https://www.lambodiecast.com/model606.html" },
+    { "id": "supercars", "title": "Supercars.net: Lamborghini Aventador LP 700-4 Roadster", "url": "https://www.supercars.net/blog/2012-lamborghini-aventador-lp-700-4-roadster/" },
+    { "id": "model", "title": "Sketchfab: ( FREE ) Lamborghini Aventador LP 700-4 by SDC PERFORMANCE™️ (CC BY 4.0)", "url": "https://sketchfab.com/3d-models/free-lamborghini-aventador-lp-700-4-df69d51ba10146f79c8c765810ca2132" }
+  ],
+  "groups": [
+    {
+      "id": "paint",
+      "step": "paint",
+      "label": "Paint",
+      "parts": ["paint_body", "aero_wing"],
+      "view": "front34",
+      "default": "giallo-evros",
+      "note": "The 13 launch colours. On-screen colours are approximations.",
+      "options": [
+        { "id": "nero-aldebaran", "name": "Nero Aldebaran", "finish": "solid", "availability": "standard", "hex": "#0d0d0f", "sources": ["gtspirit"] },
+        { "id": "giallo-evros", "name": "Giallo Evros", "finish": "solid", "availability": "standard", "hex": "#edb40c", "sources": ["gtspirit"] },
+        { "id": "bianco-isis", "name": "Bianco Isis", "finish": "solid", "availability": "option", "hex": "#f1f1ee", "sources": ["gtspirit", "lambodiecast"] },
+        { "id": "nero-pegaso", "name": "Nero Pegaso", "finish": "metallic", "availability": "option", "hex": "#14151a", "sources": ["gtspirit"] },
+        { "id": "grigio-estoque", "name": "Grigio Estoque", "finish": "metallic", "availability": "option", "hex": "#5b5e62", "sources": ["gtspirit", "lambocars-order"] },
+        { "id": "grigio-antares", "name": "Grigio Antares", "finish": "metallic", "availability": "option", "hex": "#9fa3a6", "sources": ["gtspirit"] },
+        { "id": "blu-hera", "name": "Blu Hera", "finish": "metallic", "availability": "option", "hex": "#1c2d55", "sources": ["gtspirit"] },
+        { "id": "arancio-argos", "name": "Arancio Argos", "finish": "pearl", "availability": "option", "hex": "#e2541b", "sources": ["gtspirit", "lambocars-order"] },
+        { "id": "arancio-atlas", "name": "Arancio Atlas", "finish": "pearl", "availability": "option", "hex": "#f08a1c", "sources": ["gtspirit"] },
+        { "id": "giallo-orion", "name": "Giallo Orion", "finish": "pearl", "availability": "option", "hex": "#ecc84a", "sources": ["gtspirit", "lambocars-order"] },
+        { "id": "nero-nemesis", "name": "Nero Nemesis", "finish": "matte", "availability": "option", "hex": "#1b1b1c", "sources": ["gtspirit", "lambocars-order"] },
+        { "id": "bianco-canopus", "name": "Bianco Canopus", "finish": "matte", "availability": "option", "hex": "#d8d8d4", "sources": ["gtspirit", "lambocars-order"] },
+        { "id": "marrone-apus", "name": "Marrone Apus", "finish": "matte", "availability": "option", "hex": "#3b3029", "sources": ["gtspirit"] }
+      ]
+    },
+    {
+      "id": "wheels",
+      "step": "wheels",
+      "label": "Wheel finish",
+      "parts": ["wheel_rim"],
+      "view": "wheel",
+      "default": "silver",
+      "note": "The model has one wheel design, so only the finish changes.",
+      "options": [
+        { "id": "silver", "name": "Silver", "availability": "standard", "hex": "#aeb1b4", "metalness": 1, "roughness": 0.38, "sources": ["lambodiecast"] },
+        { "id": "glossy-black", "name": "Glossy black", "availability": "option", "hex": "#0e0e10", "metalness": 0.55, "roughness": 0.16, "sources": ["caricos", "lambocars-order", "lambodiecast"] }
+      ]
+    },
+    {
+      "id": "calipers",
+      "step": "wheels",
+      "label": "Brake calipers",
+      "parts": ["brake_caliper"],
+      "view": "wheel",
+      "default": "black",
+      "note": "Carbon-ceramic brakes are standard.",
+      "options": [
+        { "id": "black", "name": "Black", "availability": "standard", "hex": "#141414", "sources": ["lambocars-order", "lambodiecast"] },
+        { "id": "red", "name": "Red", "availability": "option", "hex": "#b3141c", "sources": ["lambocars-order"] },
+        { "id": "orange", "name": "Orange", "availability": "option", "hex": "#e45a10", "sources": ["caricos", "lambocars-order", "lambodiecast"] },
+        { "id": "grey", "name": "Grey", "availability": "option", "hex": "#7b7e82", "sources": ["caricos", "lambocars-order"] },
+        { "id": "yellow", "name": "Yellow", "availability": "option", "hex": "#f2c200", "sources": ["caricos", "lambocars-order", "lambodiecast"] }
+      ]
+    },
+    {
+      "id": "interior",
+      "step": "interior",
+      "label": "Interior leather",
+      "parts": ["interior_leather", "interior_leather_insert"],
+      "view": "cabin",
+      "default": "nero-ade",
+      "note": "Shown as one colour on the seats, tunnel and dashboard. The model can't separate two-tone panels.",
+      "options": [
+        { "id": "nero-ade", "name": "Nero Ade", "detail": "Unicolor", "hex": "#151413", "sources": ["lambodiecast"] },
+        { "id": "terra-dirce", "name": "Terra Dirce", "detail": "Elegante", "hex": "#5e3c29", "sources": ["lambodiecast", "lambocars-order"] },
+        { "id": "sabbia-nefertem", "name": "Sabbia Nefertem", "detail": "Sand", "hex": "#c0a27a", "sources": ["supercars"] }
+      ]
+    },
+    {
+      "id": "lift",
+      "step": "performance",
+      "label": "Front axle lifting system",
+      "parts": ["body (preview)"],
+      "view": "side",
+      "default": "not-fitted",
+      "note": "Raises the front of the car by 40 mm for ramps and kerbs.",
+      "options": [
+        { "id": "not-fitted", "name": "Not fitted", "availability": "standard", "sources": ["caricos"] },
+        { "id": "fitted", "name": "Fitted", "availability": "option", "detail": "+40 mm at the front axle", "sources": ["caricos"] }
+      ]
+    }
+  ],
+  "previews": {
+    "wing": {
+      "label": "Active rear wing",
+      "note": "The wing deploys on its own as speed rises. Preview its two positions.",
+      "positions": [
+        { "id": "stowed", "name": "Stowed", "deg": 0, "rise": 0 },
+        { "id": "p4", "name": "4°", "deg": 4, "rise": 0.06 },
+        { "id": "p11", "name": "11°", "deg": 11, "rise": 0.09 }
+      ],
+      "sources": ["caricos"]
+    },
+    "lights": {
+      "label": "Lights",
+      "note": "Bi-xenon headlamps with LED daytime running lights.",
+      "sources": ["caricos"]
+    },
+    "included": [
+      { "name": "Transparent engine bonnet", "detail": "Engine cover with glass insets. Included in this 3D model and not changeable here.", "sources": ["caricos", "lambocars-order"] }
+    ]
+  }
+}
