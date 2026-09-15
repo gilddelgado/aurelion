@@ -1,0 +1,4 @@
+node_modules/
+assets/models/source/
+tools/.drive-frames/
+__pycache__/

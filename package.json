@@ -1,0 +1,21 @@
+{
+  "name": "aurelion",
+  "private": true,
+  "type": "module",
+  "description": "AURELION: Aventador LP 700-4 landing page and configurator.",
+  "scripts": {
+    "prep-model": "node tools/prep-model.mjs assets/models/source/free__lamborghini_aventador_lp_700-4.glb assets/models/aventador-lp700-4.glb",
+    "vendor": "node tools/copy-vendor.mjs",
+    "css": "tailwindcss -c tailwind.config.cjs -i tools/tailwind.input.css -o css/tailwind.css --minify"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@gltf-transform/core": "4.5.1",
+    "@gltf-transform/extensions": "4.5.1",
+    "@gltf-transform/functions": "4.5.1",
+    "meshoptimizer": "1.2.0",
+    "tailwindcss": "^3.4.17"
+  }
+}
