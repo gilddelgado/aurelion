@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURELION · Aventador LP 700-4</title>
+    <meta name="description" content="AURELION: the Aventador LP 700-4, built one part at a time.">
+    <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+    <meta name="theme-color" content="#050505">
+
+    <script>
+        (function () {
+            var PLACEHOLDER = "data:image/svg+xml," + encodeURIComponent(
+                '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">' +
+                '<defs><radialGradient id="g" cx="50%" cy="60%" r="60%"><stop offset="0" stop-color="#2a2208"/><stop offset="1" stop-color="#030303"/></radialGradient></defs>' +
+                '<rect width="1600" height="900" fill="url(#g)"/>' +
+                '<path d="M180 620 Q420 470 760 450 L1040 440 Q1300 470 1440 600 L1440 640 L180 640 Z" fill="none" stroke="#e6b31e" stroke-opacity=".35" stroke-width="3"/>' +
+                '<circle cx="470" cy="640" r="85" fill="none" stroke="#e6b31e" stroke-opacity=".35" stroke-width="3"/>' +
+                '<circle cx="1180" cy="640" r="85" fill="none" stroke="#e6b31e" stroke-opacity=".35" stroke-width="3"/></svg>');
+            document.addEventListener('error', function (e) {
+                var img = e.target;
+                if (!img || img.tagName !== 'IMG') return;
+                var list = (img.getAttribute('data-fallback') || '').split('|').filter(Boolean);
+                if (list.length) {
+                    img.setAttribute('data-fallback', list.slice(1).join('|'));
+                    img.src = list[0];
+                } else if (img.src !== PLACEHOLDER) {
+                    img.classList.add('img-failed');
+                    img.src = PLACEHOLDER;
+                }
+            }, true);
+        })();
+    </script>
+    <link rel="preload" href="assets/fonts/syncopate-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" as="image" href="assets/video/test-drive-poster.webp" imagesrcset="assets/video/test-drive-poster-854.webp 854w, assets/video/test-drive-poster.webp 1280w" imagesizes="100vw" fetchpriority="high">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/tailwind.css">
+    <link rel="stylesheet" href="css/landing.css">
+</head>
+<body class="antialiased selection:bg-[#e6b31e] selection:text-[#000]">
+
+    <div class="noise-overlay"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-trail" id="cursor-trail"></div>
+
+    <nav id="site-nav" class="site-nav fixed top-0 w-full z-50 px-5 md:px-8 flex justify-between items-center">
+        <span class="nav-line" aria-hidden="true"><span id="nav-progress"></span></span>
+        <a href="#hero" class="brand-lockup pointer-events-auto nav-link no-underline text-inherit"><img class="brand-logo" src="assets/brand/aurelion-logo.svg" width="1485" height="126" alt="AURELION"></a>
+        <div class="hidden md:flex gap-12 tech-font text-xs tracking-widest pointer-events-auto">
+            <a href="#engineering" class="hover:text-[#e6b31e] transition-colors nav-link">ENGINEERING</a>
+            <a href="#specs" class="hover:text-[#e6b31e] transition-colors nav-link">SPECS</a>
+            <a href="configure.html" class="hover:text-[#e6b31e] transition-colors nav-link">CONFIGURATOR</a>
+        </div>
+        <div class="pointer-events-auto">
+            <button type="button" class="menu-toggle hover:text-[#e6b31e] transition-colors nav-link" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
+                <span class="bars" aria-hidden="true"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu -->
+    <div class="site-menu" id="site-menu" aria-hidden="true">
+        <div class="max-w-6xl w-full mx-auto grid md:grid-cols-[1fr_auto] gap-12 items-end">
+            <ul class="tech-font font-bold leading-tight text-4xl md:text-6xl space-y-3">
+                <li class="menu-item"><a href="#engineering" class="menu-link hover:text-[#e6b31e] nav-link">ENGINEERING</a></li>
+                <li class="menu-item"><a href="#specs" class="menu-link hover:text-[#e6b31e] nav-link">SPECS</a></li>
+                <li class="menu-item"><a href="#performance" class="menu-link hover:text-[#e6b31e] nav-link">TELEMETRY</a></li>
+                <li class="menu-item"><a href="#cockpit" class="menu-link hover:text-[#e6b31e] nav-link">COCKPIT</a></li>
+                <li class="menu-item"><a href="configure.html" class="menu-link hover:text-[#e6b31e] nav-link">CONFIGURATOR</a></li>
+                <li class="menu-item"><a href="#reserve" class="menu-link text-[#e6b31e] hover:text-white nav-link">RESERVE</a></li>
+            </ul>
+            <div class="menu-item data-font text-sm text-gray-400 max-w-xs space-y-6" style="transition-delay:.55s">
+                <p>Bring your AURELION build to a private viewing and test drive.</p>
+                <button type="button" class="open-booking nav-link w-full px-6 py-4 bg-[#e6b31e] text-black tech-font text-xs font-bold tracking-[0.2em] hover:bg-white transition-colors">BOOK A TEST DRIVE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section id="hero" class="lp-hero" aria-labelledby="hero-title">
+        <div class="lp-hero-media">
+            <img src="assets/video/test-drive-poster.webp" srcset="assets/video/test-drive-poster-854.webp 854w, assets/video/test-drive-poster.webp 1280w" sizes="100vw"
+                 width="1280" height="720" fetchpriority="high" class="lp-hero-img"
+                 alt="Aventador LP 700-4 in Giallo Evros driving through a lit road tunnel, rendered from the site's 3D model">
+            <video class="lp-hero-video" muted loop playsinline preload="none" disablepictureinpicture disableremoteplayback aria-hidden="true" tabindex="-1"
+                   data-src="assets/video/test-drive-1280.mp4" data-src-av1="assets/video/test-drive-1280-av1.mp4" data-src-small="assets/video/test-drive-854.mp4"></video>
+        </div>
+        <button type="button" class="lp-hero-pause" id="hero-video-toggle" aria-pressed="false" hidden>
+            <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></svg>
+            <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>
+            <span class="lp-hero-pause-label">Pause video</span>
+        </button>
+        <div class="lp-hero-content">
+            <div class="lp-hero-top">
+                <p class="lp-eyebrow data-font">LP 700-4 · 6.5-litre V12 · 2011–2016</p>
+                <h1 id="hero-title" class="lp-hero-title tech-font">AVENTADOR</h1>
+            </div>
+            <div class="lp-hero-bottom">
+                <p class="lp-hero-lede">Build one part by part. Change the paint, the wheels or the calipers, and only that part of the car changes.</p>
+                <div class="lp-hero-actions">
+                    <a href="configure.html" class="lp-btn lp-btn-gold nav-link">Build yours</a>
+                    <a href="#make-it-yours" class="lp-btn lp-btn-line nav-link">See what you can change</a>
+                </div>
+                <p class="lp-hero-note data-font">AURELION · computer-rendered from a 3D model</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="make-it-yours" class="lp-seq" aria-labelledby="seq-title">
+        <div class="lp-wrap">
+            <header class="lp-seq-head">
+                <p class="lp-eyebrow data-font">The AURELION configurator, step by step</p>
+                <h2 id="seq-title" class="tech-font lp-h2">ONE CAR. ONE PART AT A TIME.</h2>
+                <p class="lp-sub">Every picture below is the same Arancio Argos car. Each step changes only the part it names.</p>
+            </header>
+            <div class="lp-seq-grid">
+                <figure class="lp-seq-figure" id="seq-figure" data-active="1" aria-hidden="true">
+                    <div class="lp-seq-frame">
+                        <img src="assets/img/seq-paint.webp" srcset="assets/img/seq-paint-800.webp 800w, assets/img/seq-paint-1200.webp 1200w, assets/img/seq-paint.webp 1600w" sizes="(max-width: 900px) 92vw, 52vw" width="1600" height="1200" decoding="async" alt="" data-step="1">
+                        <img src="assets/img/seq-wheels.webp" srcset="assets/img/seq-wheels-800.webp 800w, assets/img/seq-wheels-1200.webp 1200w, assets/img/seq-wheels.webp 1600w" sizes="(max-width: 900px) 92vw, 52vw" width="1600" height="1200" decoding="async" loading="lazy" alt="" data-step="2">
+                        <img src="assets/img/seq-doors.webp" srcset="assets/img/seq-doors-800.webp 800w, assets/img/seq-doors-1200.webp 1200w, assets/img/seq-doors.webp 1600w" sizes="(max-width: 900px) 92vw, 52vw" width="1600" height="1200" decoding="async" loading="lazy" alt="" data-step="3">
+                        <img src="assets/img/seq-wing.webp" srcset="assets/img/seq-wing-800.webp 800w, assets/img/seq-wing-1200.webp 1200w, assets/img/seq-wing.webp 1600w" sizes="(max-width: 900px) 92vw, 52vw" width="1600" height="1200" decoding="async" loading="lazy" alt="" data-step="4">
+                    </div>
+                    <figcaption class="lp-seq-caption data-font" id="seq-caption">Arancio Argos · silver wheels · black calipers</figcaption>
+                </figure>
+                <ol class="lp-seq-steps">
+                    <li class="lp-step" data-step="1" data-caption="Arancio Argos · silver wheels · black calipers">
+                        <img class="lp-step-img" src="assets/img/seq-paint.webp" srcset="assets/img/seq-paint-800.webp 800w, assets/img/seq-paint-1200.webp 1200w, assets/img/seq-paint.webp 1600w" sizes="(max-width: 900px) 92vw, 52vw" width="1600" height="1200" loading="lazy" decoding="async"
+                             alt="Aventador in Arancio Argos pearl paint with silver wheels">
+                        <span class="lp-step-num tech-font" aria-hidden="true">01</span>
+                        <h3 class="lp-step-title tech-font">PAINT</h3>
+                        <p>Thirteen launch colours in four finishes: solid, metallic, pearl and matte. A light sweep crosses the body as it changes, and the wheels, calipers and cabin stay exactly as they were.</p>
+                        <a href="configure.html#paint" class="lp-step-link data-font nav-link">Open paint <span aria-hidden="true">→</span></a>
+                    </li>
+                    <li class="lp-step" data-step="2" data-caption="Glossy black wheels · yellow calipers · same paint">
+                        <img class="lp-step-img" src="assets/img/seq-wheels.webp" srcset="assets/img/seq-wheels-800.webp 800w, assets/img/seq-wheels-1200.webp 1200w, assets/img/seq-wheels.webp 1600w" sizes="(max-width: 900px) 92vw, 52vw" width="1600" height="1200" loading="lazy" decoding="async"
+                             alt="Close-up of the front wheel in glossy black with a yellow brake caliper">
+                        <span class="lp-step-num tech-font" aria-hidden="true">02</span>
+                        <h3 class="lp-step-title tech-font">WHEELS AND BRAKES</h3>
+                        <p>Silver or glossy black wheels, and black, red, orange, grey or yellow calipers on the carbon-ceramic brakes. Each sits on its own layer, so the paint never changes with them.</p>
+                        <a href="configure.html#wheels" class="lp-step-link data-font nav-link">Open wheels <span aria-hidden="true">→</span></a>
+                    </li>
+                    <li class="lp-step" data-step="3" data-caption="Scissor doors open · lights on · same build">
+                        <img class="lp-step-img" src="assets/img/seq-doors.webp" srcset="assets/img/seq-doors-800.webp 800w, assets/img/seq-doors-1200.webp 1200w, assets/img/seq-doors.webp 1600w" sizes="(max-width: 900px) 92vw, 52vw" width="1600" height="1200" loading="lazy" decoding="async"
+                             alt="The car at night with both scissor doors raised and the headlights on">
+                        <span class="lp-step-num tech-font" aria-hidden="true">03</span>
+                        <h3 class="lp-step-title tech-font">DOORS AND LIGHTS</h3>
+                        <p>See the leather behind the raised scissor doors in the cabin view, then switch to the night view with the bi-xenon headlamps and LED daytime running lights on.</p>
+                        <a href="configure.html#interior" class="lp-step-link data-font nav-link">Open interior <span aria-hidden="true">→</span></a>
+                    </li>
+                    <li class="lp-step" data-step="4" data-caption="Rear wing at 11° · same build">
+                        <img class="lp-step-img" src="assets/img/seq-wing.webp" srcset="assets/img/seq-wing-800.webp 800w, assets/img/seq-wing-1200.webp 1200w, assets/img/seq-wing.webp 1600w" sizes="(max-width: 900px) 92vw, 52vw" width="1600" height="1200" loading="lazy" decoding="async"
+                             alt="Rear three-quarter view with the active rear wing raised">
+                        <span class="lp-step-num tech-font" aria-hidden="true">04</span>
+                        <h3 class="lp-step-title tech-font">WING AND LIFT</h3>
+                        <p>Preview the active rear wing at 4° and 11°, and the optional front axle lifting system raising the nose by 40 mm.</p>
+                        <a href="configure.html#aero" class="lp-step-link data-font nav-link">Open the wing <span aria-hidden="true">→</span></a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section id="numbers" class="lp-numbers" aria-labelledby="numbers-title">
+        <div class="lp-wrap">
+            <h2 id="numbers-title" class="lp-numbers-title data-font">LP 700-4 coupé, factory figures</h2>
+            <dl class="lp-numbers-grid">
+                <div><dt>Power at 8,250 rpm</dt><dd><span class="lp-num">700</span> <span class="lp-unit">CV</span></dd></div>
+                <div><dt>Torque at 5,500 rpm</dt><dd><span class="lp-num">690</span> <span class="lp-unit">Nm</span></dd></div>
+                <div><dt>0–100 km/h</dt><dd><span class="lp-num">2.9</span> <span class="lp-unit">s</span></dd></div>
+                <div><dt>Top speed</dt><dd><span class="lp-num">350</span> <span class="lp-unit">km/h</span></dd></div>
+                <div><dt>Dry weight</dt><dd><span class="lp-num">1,575</span> <span class="lp-unit">kg</span></dd></div>
+                <div><dt>Gearbox</dt><dd><span class="lp-num">ISR</span> <span class="lp-unit">7-speed</span></dd></div>
+            </dl>
+            <p class="lp-source data-font">Source: Lamborghini press information for the 2012 LP 700-4, via <a href="https://www.caricos.com/cars/l/lamborghini/2012_lamborghini_aventador_lp700-4/" target="_blank" rel="noopener" class="nav-link">Caricos</a>.</p>
+        </div>
+    </section>
+
+    <section id="starter-builds" class="lp-starters" aria-labelledby="starters-title">
+        <div class="lp-wrap">
+            <header class="lp-starters-head">
+                <h2 id="starters-title" class="tech-font lp-h2">START FROM A BUILD</h2>
+                <a href="configure.html" class="lp-step-link data-font nav-link">Or start from the standard car <span aria-hidden="true">→</span></a>
+            </header>
+            <div class="lp-starters-grid">
+                <a class="lp-card nav-link" href="configure.html#build-7.1.0.0.0">
+                    <img src="assets/img/starter-argos.webp" srcset="assets/img/starter-argos-600.webp 600w, assets/img/starter-argos.webp 1200w" sizes="(max-width: 900px) min(92vw, 560px), 31vw" width="1200" height="900" loading="lazy" decoding="async" alt="">
+                    <span class="lp-card-body">
+                        <span class="lp-card-title tech-font">ARANCIO ARGOS</span>
+                        <span class="lp-card-spec data-font">Pearl · glossy black wheels · black calipers</span>
+                        <span class="lp-card-cta data-font">Open this build <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
+                <a class="lp-card nav-link" href="configure.html#build-2.1.2.0.0">
+                    <img src="assets/img/starter-isis.webp" srcset="assets/img/starter-isis-600.webp 600w, assets/img/starter-isis.webp 1200w" sizes="(max-width: 900px) min(92vw, 560px), 31vw" width="1200" height="900" loading="lazy" decoding="async" alt="">
+                    <span class="lp-card-body">
+                        <span class="lp-card-title tech-font">BIANCO ISIS</span>
+                        <span class="lp-card-spec data-font">Solid white · glossy black wheels · orange calipers</span>
+                        <span class="lp-card-cta data-font">Open this build <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
+                <a class="lp-card nav-link" href="configure.html#build-10.0.4.0.0">
+                    <img src="assets/img/starter-nemesis.webp" srcset="assets/img/starter-nemesis-600.webp 600w, assets/img/starter-nemesis.webp 1200w" sizes="(max-width: 900px) min(92vw, 560px), 31vw" width="1200" height="900" loading="lazy" decoding="async" alt="">
+                    <span class="lp-card-body">
+                        <span class="lp-card-title tech-font">NERO NEMESIS</span>
+                        <span class="lp-card-spec data-font">Matte black · silver wheels · yellow calipers</span>
+                        <span class="lp-card-cta data-font">Open this build <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering -->
+    <section id="engineering" class="relative bg-[#050505] border-y border-white/5">
+        <!-- ILLUSTRATIONS-DEFS:START -->
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+            <defs>
+                <pattern id="carbon" width="8" height="8" patternUnits="userSpaceOnUse">
+                    <rect width="8" height="8" fill="#141414"/>
+                    <rect width="4" height="4" fill="#262626"/>
+                    <rect x="4" y="4" width="4" height="4" fill="#262626"/>
+                </pattern>
+                <pattern id="alu-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+                    <rect width="6" height="6" fill="rgba(255,255,255,0.02)"/><line x1="0" y1="0" x2="0" y2="6" stroke="rgba(200,205,210,0.28)" stroke-width="1.2"/>
+                </pattern>
+                <linearGradient id="goldLine" x1="0" x2="1">
+                    <stop offset="0" stop-color="#e6b31e" stop-opacity="0"/>
+                    <stop offset=".5" stop-color="#e6b31e"/>
+                    <stop offset="1" stop-color="#ff6b00" stop-opacity=".2"/>
+                </linearGradient>
+                <linearGradient id="scanGlow" x1="0" x2="1">
+                    <stop offset="0" stop-color="#e6b31e" stop-opacity="0"/>
+                    <stop offset=".85" stop-color="#e6b31e" stop-opacity=".35"/>
+                    <stop offset="1" stop-color="#fff2c4" stop-opacity=".9"/>
+                </linearGradient>
+                <clipPath id="clip-aventador-body"><path d="M559.8 174.1 L549.6 173.2 L548.4 171.1 L545.2 170.4 L544.4 166.6 L544.4 155.0 L553.0 139.6 L532.8 143.0 L519.1 134.4 L524.0 131.8 L393.4 110.4 L337.0 106.4 L294.8 106.5 L251.4 111.0 L153.5 142.5 L142.9 143.2 L96.0 156.8 L63.0 168.8 L46.4 179.5 L40.1 186.2 L49.5 201.6 L56.0 204.9 L52.9 209.5 L41.1 213.2 L49.5 217.4 L135.0 216.8 L130.9 208.1 L128.6 199.4 L128.6 190.8 L131.2 180.8 L136.1 172.5 L143.4 165.5 L151.5 161.0 L161.6 158.6 L174.5 159.6 L183.6 163.4 L190.1 168.2 L196.9 176.6 L200.6 185.6 L201.8 196.9 L199.1 208.8 L194.8 216.5 L283.0 216.9 L284.4 218.4 L287.6 217.4 L290.1 218.5 L292.6 216.9 L422.9 217.1 L429.9 216.1 L424.9 206.2 L422.2 196.6 L422.2 186.8 L424.9 176.8 L430.1 167.8 L437.9 160.2 L446.4 155.5 L459.9 152.8 L471.0 154.0 L480.2 157.8 L487.2 162.9 L494.6 171.9 L498.8 181.8 L500.0 191.0 L496.2 211.8 L506.4 211.6 L501.2 215.2 L524.8 214.4 L541.8 203.1 L551.1 200.1 L558.5 188.4 L554.5 188.0 L554.0 185.2 L558.9 178.2 Z"/></clipPath>
+                <symbol id="aventador-body" viewBox="0 0 600 260">
+                    <path d="M559.8 174.1 L549.6 173.2 L548.4 171.1 L545.2 170.4 L544.4 166.6 L544.4 155.0 L553.0 139.6 L532.8 143.0 L519.1 134.4 L524.0 131.8 L393.4 110.4 L337.0 106.4 L294.8 106.5 L251.4 111.0 L153.5 142.5 L142.9 143.2 L96.0 156.8 L63.0 168.8 L46.4 179.5 L40.1 186.2 L49.5 201.6 L56.0 204.9 L52.9 209.5 L41.1 213.2 L49.5 217.4 L135.0 216.8 L130.9 208.1 L128.6 199.4 L128.6 190.8 L131.2 180.8 L136.1 172.5 L143.4 165.5 L151.5 161.0 L161.6 158.6 L174.5 159.6 L183.6 163.4 L190.1 168.2 L196.9 176.6 L200.6 185.6 L201.8 196.9 L199.1 208.8 L194.8 216.5 L283.0 216.9 L284.4 218.4 L287.6 217.4 L290.1 218.5 L292.6 216.9 L422.9 217.1 L429.9 216.1 L424.9 206.2 L422.2 196.6 L422.2 186.8 L424.9 176.8 L430.1 167.8 L437.9 160.2 L446.4 155.5 L459.9 152.8 L471.0 154.0 L480.2 157.8 L487.2 162.9 L494.6 171.9 L498.8 181.8 L500.0 191.0 L496.2 211.8 L506.4 211.6 L501.2 215.2 L524.8 214.4 L541.8 203.1 L551.1 200.1 L558.5 188.4 L554.5 188.0 L554.0 185.2 L558.9 178.2 Z" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.55)" stroke-width="1.4" stroke-linejoin="round"/>
+                    <g fill="rgba(230,179,30,0.08)" stroke="rgba(255,255,255,0.35)" stroke-linejoin="round"><path d="M223.2 132.2 L189.1 144.8 L223.8 149.9 L223.4 145.1 L216.8 137.9 Z"/><path d="M369.4 132.5 L361.0 120.4 L335.1 117.2 L288.4 117.9 L260.5 121.8 L230.2 129.2 L229.8 130.4 L239.0 130.6 L239.4 135.1 L237.2 141.4 L233.0 143.8 L229.2 144.1 L233.6 149.0 Z"/><path d="M252.6 114.4 L248.1 112.9 L219.4 120.9 L153.8 142.5 L174.5 142.2 L208.2 128.5 Z"/></g>
+                    <g fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.4"><g transform="translate(165.2 195.0)"><circle r="35.6"/><circle r="25.8" stroke-opacity=".45"/><line x1="0" y1="-5.9" x2="0" y2="-24.3" transform="rotate(0)" stroke-opacity=".35"/><line x1="0" y1="-5.9" x2="0" y2="-24.3" transform="rotate(72)" stroke-opacity=".35"/><line x1="0" y1="-5.9" x2="0" y2="-24.3" transform="rotate(144)" stroke-opacity=".35"/><line x1="0" y1="-5.9" x2="0" y2="-24.3" transform="rotate(216)" stroke-opacity=".35"/><line x1="0" y1="-5.9" x2="0" y2="-24.3" transform="rotate(288)" stroke-opacity=".35"/></g><g transform="translate(461.0 191.6)"><circle r="37.9"/><circle r="27.4" stroke-opacity=".45"/><line x1="0" y1="-6.3" x2="0" y2="-25.8" transform="rotate(0)" stroke-opacity=".35"/><line x1="0" y1="-6.3" x2="0" y2="-25.8" transform="rotate(72)" stroke-opacity=".35"/><line x1="0" y1="-6.3" x2="0" y2="-25.8" transform="rotate(144)" stroke-opacity=".35"/><line x1="0" y1="-6.3" x2="0" y2="-25.8" transform="rotate(216)" stroke-opacity=".35"/><line x1="0" y1="-6.3" x2="0" y2="-25.8" transform="rotate(288)" stroke-opacity=".35"/></g></g>
+                    <line x1="0" y1="233" x2="600" y2="233" stroke="rgba(255,255,255,0.12)"/>
+                </symbol>
+                <symbol id="aventador-side" viewBox="0 0 600 260">
+                    <use href="#aventador-body"/>
+                    <path d="M519.2 134.0 L532.8 142.9 L554.1 139.2 L553.0 138.1 L526.2 132.1 Z" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.55)" stroke-width="1.2" stroke-linejoin="round"/>
+                </symbol>
+            </defs>
+        </svg>
+        <!-- ILLUSTRATIONS-DEFS:END -->
+
+        <!-- Chassis -->
+        <div class="eng-panel">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl w-full mx-auto items-center">
+                <div class="reveal-up">
+                    <div class="data-font text-[#e6b31e] mb-4 tracking-widest text-sm">PHASE 01 // CHASSIS</div>
+                    <h2 class="tech-font eng-title mb-6">MONOCOQUE</h2>
+                    <p class="text-gray-400 text-lg md:text-xl font-light leading-relaxed max-w-lg">The passenger cell, roof included, is a single carbon-fibre shell that weighs 147.5 kg. Aluminium frames bolted to it front and rear carry the suspension, and the whole structure resists 35,000 Nm of twisting force per degree.</p>
+                    <div class="mt-8 flex gap-8 data-font border-t border-white/10 pt-8">
+                        <div><div class="text-3xl text-white">35,000</div><div class="text-xs text-gray-500 mt-1">NM/DEG TORSIONAL STIFFNESS</div></div>
+                        <div><div class="text-3xl text-white">147.5</div><div class="text-xs text-gray-500 mt-1">KG CARBON MONOCOQUE</div></div>
+                    </div>
+                </div>
+                <div class="relative reveal-scale">
+                    <div class="w-full max-w-[560px] mx-auto aspect-square border border-[#e6b31e]/30 rounded-full flex items-center justify-center relative">
+                        <div class="absolute inset-4 border border-white/10 rounded-full animate-[spin_20s_linear_infinite]" style="border-top-color: rgba(230,179,30,.6)"></div>
+                        <div class="absolute inset-8 border border-[#e6b31e]/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
+                        <!-- ILLUSTRATION-CHASSIS:START -->
+                        <svg viewBox="0 0 600 260" class="w-[92%] h-auto relative float-anim" role="img" aria-label="Side view of the Aventador LP 700-4 with the carbon-fibre monocoque highlighted between the aluminium front and rear frames">
+                            <use href="#aventador-side"/>
+                            <g clip-path="url(#clip-aventador-body)">
+                                <rect x="0" y="0" width="201" height="233" fill="url(#alu-hatch)"/>
+                                <rect x="371" y="0" width="229" height="233" fill="url(#alu-hatch)"/>
+                                <rect x="201" y="0" width="170" height="233" fill="url(#carbon)" fill-opacity=".92"/>
+                                <rect class="mono-scan" x="155" y="0" width="46" height="233" fill="url(#scanGlow)"/>
+                                <g stroke="#e6b31e" stroke-width="2"><line x1="201" y1="0" x2="201" y2="233"/><line x1="371" y1="0" x2="371" y2="233"/></g>
+                            </g>
+                            <path d="M559.8 174.1 L549.6 173.2 L548.4 171.1 L545.2 170.4 L544.4 166.6 L544.4 155.0 L553.0 139.6 L532.8 143.0 L519.1 134.4 L524.0 131.8 L393.4 110.4 L337.0 106.4 L294.8 106.5 L251.4 111.0 L153.5 142.5 L142.9 143.2 L96.0 156.8 L63.0 168.8 L46.4 179.5 L40.1 186.2 L49.5 201.6 L56.0 204.9 L52.9 209.5 L41.1 213.2 L49.5 217.4 L135.0 216.8 L130.9 208.1 L128.6 199.4 L128.6 190.8 L131.2 180.8 L136.1 172.5 L143.4 165.5 L151.5 161.0 L161.6 158.6 L174.5 159.6 L183.6 163.4 L190.1 168.2 L196.9 176.6 L200.6 185.6 L201.8 196.9 L199.1 208.8 L194.8 216.5 L283.0 216.9 L284.4 218.4 L287.6 217.4 L290.1 218.5 L292.6 216.9 L422.9 217.1 L429.9 216.1 L424.9 206.2 L422.2 196.6 L422.2 186.8 L424.9 176.8 L430.1 167.8 L437.9 160.2 L446.4 155.5 L459.9 152.8 L471.0 154.0 L480.2 157.8 L487.2 162.9 L494.6 171.9 L498.8 181.8 L500.0 191.0 L496.2 211.8 L506.4 211.6 L501.2 215.2 L524.8 214.4 L541.8 203.1 L551.1 200.1 L558.5 188.4 L554.5 188.0 L554.0 185.2 L558.9 178.2 Z" fill="none" stroke="#e6b31e" stroke-width="1.6" stroke-linejoin="round" clip-path="url(#clip-mono-band)"/>
+                            <clipPath id="clip-mono-band"><rect x="201" y="0" width="170" height="233"/></clipPath>
+                            <g class="data-font" font-size="11" letter-spacing="2">
+                                <line x1="286" y1="104" x2="286" y2="38" stroke="#e6b31e" stroke-opacity=".6"/>
+                                <circle cx="286" cy="104" r="3" fill="#e6b31e"/>
+                                <text x="286" y="28" text-anchor="middle" fill="#e6b31e">CARBON MONOCOQUE · 147.5 KG</text>
+                                <text x="96" y="252" text-anchor="middle" fill="#9a9a9a" font-size="9.5">ALUMINIUM FRONT FRAME</text>
+                                <text x="492" y="252" text-anchor="middle" fill="#9a9a9a" font-size="9.5">ALUMINIUM REAR FRAME</text>
+                            </g>
+                        </svg>
+                        <!-- ILLUSTRATION-CHASSIS:END -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Powertrain -->
+        <div class="eng-panel">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl w-full mx-auto items-center">
+                <div class="order-2 lg:order-1 relative reveal-scale">
+                    <div class="glass-card p-4 md:p-6 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(230,179,30,0.08)_0%,transparent_70%)]"></div>
+                        <!-- ILLUSTRATION-POWERTRAIN:START -->
+                        <svg viewBox="0 0 600 330" class="w-full h-auto relative" role="img" aria-label="Plan view of the Aventador LP 700-4 drivetrain: V12 behind the cabin, 7-speed ISR gearbox ahead of it in the centre tunnel, a shaft to the Haldex IV coupling at the front axle, and the rear differential">
+                            <path d="M39.9 164.2 L45.1 188.5 L52.2 208.0 L51.0 216.0 L60.6 232.8 L70.5 246.1 L87.1 257.9 L117.9 270.2 L142.0 275.1 L159.0 275.1 L161.4 273.5 L164.8 273.6 L166.5 275.1 L184.0 275.1 L214.8 271.5 L222.9 285.6 L234.9 289.4 L236.0 288.9 L236.0 285.9 L231.8 271.2 L282.8 270.8 L334.4 272.2 L361.2 275.4 L422.0 275.2 L437.0 277.5 L447.5 276.5 L455.0 277.4 L456.8 275.9 L460.9 275.9 L462.4 277.4 L481.0 277.5 L494.5 275.4 L527.5 264.1 L531.8 260.4 L556.0 225.8 L554.8 204.5 L560.0 165.8 L554.8 124.9 L555.9 102.9 L528.8 65.5 L501.5 56.4 L481.1 52.4 L462.4 52.5 L460.8 53.9 L443.1 52.4 L430.0 53.9 L361.4 53.8 L334.4 56.9 L282.6 58.4 L231.8 57.9 L236.1 43.2 L235.6 39.9 L222.9 43.6 L214.9 57.6 L190.9 56.4 L184.1 54.8 L166.4 54.8 L163.1 56.4 L159.4 54.9 L142.0 54.8 L123.6 57.1 L87.4 71.1 L70.8 82.8 L60.2 97.0 L51.5 112.2 L51.0 117.4 L52.2 121.1 L45.4 139.8 Z" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.4)" stroke-width="1.4" stroke-linejoin="round"/>
+                            <g fill="rgba(230,179,30,0.05)" stroke="rgba(255,255,255,0.18)"><path d="M221.5 245.2 L201.5 250.8 L187.8 256.0 L221.1 256.6 Z"/><path d="M366.4 239.4 L361.0 234.8 L355.6 233.0 L335.0 230.6 L310.8 229.9 L285.8 231.2 L257.1 235.5 L227.8 243.1 L226.5 253.2 L227.5 257.2 L228.8 257.8 L307.6 249.4 L329.2 248.2 Z"/><path d="M482.1 117.6 L456.1 122.0 L451.1 123.9 L451.1 120.5 L424.4 124.9 L423.4 124.6 L423.8 122.2 L406.4 124.9 L404.0 126.6 L397.2 135.2 L404.5 163.8 L397.2 193.9 L405.5 204.0 L423.8 206.9 L423.6 204.4 L450.2 208.8 L451.1 208.6 L450.9 205.2 L456.1 207.1 L482.4 211.2 L477.8 197.4 L484.9 165.2 L477.6 132.6 Z"/><path d="M173.4 80.5 L169.8 82.9 L160.9 96.4 L150.4 120.1 L145.4 147.2 L144.8 167.5 L147.0 194.9 L150.8 210.1 L161.0 233.0 L169.6 246.1 L173.8 248.6 L189.0 245.2 L251.5 226.9 L248.0 161.9 L251.8 103.5 L249.1 101.1 L182.1 82.0 Z"/><path d="M187.8 73.1 L201.5 78.4 L221.5 83.8 L221.0 72.5 Z"/><path d="M226.4 77.2 L228.0 86.1 L258.2 93.9 L286.9 98.0 L309.1 99.2 L336.5 98.4 L359.5 95.0 L366.5 89.5 L330.0 81.4 L306.2 80.0 L227.5 71.9 Z"/></g>
+                            <g fill="#1b1b1b" stroke="rgba(255,255,255,0.5)"><rect x="125.9" y="58.8" width="73.6" height="26" rx="5"/><rect x="125.9" y="245.2" width="73.6" height="26" rx="5"/><rect x="419.5" y="56.8" width="78.2" height="26" rx="5"/><rect x="419.5" y="247.2" width="78.2" height="26" rx="5"/></g>
+                            <g fill="none" stroke="rgba(255,255,255,0.22)"><rect x="262" y="103" width="46" height="36" rx="9"/><rect x="262" y="191" width="46" height="36" rx="9"/></g>
+                            <g fill="none" stroke="#e6b31e" stroke-width="2" class="flow">
+                                <path d="M300 165 L176.7 165"/>
+                                <path d="M162.7 153 L162.7 84.8"/><path d="M162.7 177 L162.7 245.2"/>
+                                <path d="M458.6 153 L458.6 82.8"/><path d="M458.6 177 L458.6 247.2"/>
+                            </g>
+                            <rect x="149.7" y="153" width="26" height="24" rx="4" fill="rgba(230,179,30,0.14)" stroke="#e6b31e"/>
+                            <rect x="300" y="150" width="52" height="30" rx="4" fill="#141414" stroke="#e6b31e"/>
+                            <g fill="#e6b31e" opacity=".75"><rect x="306.0" y="156" width="3.4" height="18"/><rect x="312.4" y="156" width="3.4" height="18"/><rect x="318.8" y="156" width="3.4" height="18"/><rect x="325.2" y="156" width="3.4" height="18"/><rect x="331.6" y="156" width="3.4" height="18"/><rect x="338.0" y="156" width="3.4" height="18"/><rect x="344.4" y="156" width="3.4" height="18"/></g>
+                            <rect x="356" y="132" width="90" height="66" rx="6" fill="#141414" stroke="rgba(255,255,255,0.6)"/>
+                            <g fill="none" stroke="#ff6b00" stroke-width="1.5" class="v12-fire"><circle cx="366.0" cy="148" r="5.6"/><circle cx="366.0" cy="182" r="5.6"/><circle cx="380.6" cy="148" r="5.6"/><circle cx="380.6" cy="182" r="5.6"/><circle cx="395.2" cy="148" r="5.6"/><circle cx="395.2" cy="182" r="5.6"/><circle cx="409.8" cy="148" r="5.6"/><circle cx="409.8" cy="182" r="5.6"/><circle cx="424.4" cy="148" r="5.6"/><circle cx="424.4" cy="182" r="5.6"/><circle cx="439.0" cy="148" r="5.6"/><circle cx="439.0" cy="182" r="5.6"/></g>
+                            <circle cx="458.6" cy="165" r="12" fill="rgba(230,179,30,0.14)" stroke="#e6b31e"/>
+                            <g class="data-font" font-size="10.5" letter-spacing="1.5" fill="#bbb">
+                                <text x="401" y="109" text-anchor="middle" fill="#ff6b00">6.5 L V12</text>
+                                <text x="401" y="123" text-anchor="middle" fill="#ff6b00">700 CV</text>
+                                <text x="326" y="215" text-anchor="middle">7-SPEED ISR</text>
+                                <line x1="326" y1="181" x2="326" y2="204" stroke="#666"/>
+                                <text x="143" y="169" text-anchor="end">HALDEX IV</text>
+                                <text x="477" y="169">REAR DIFF</text>
+                                <text x="36" y="22" fill="#666">FRONT ←</text>
+                            </g>
+                        </svg>
+                        <!-- ILLUSTRATION-POWERTRAIN:END -->
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 reveal-up">
+                    <div class="data-font text-[#e6b31e] mb-4 tracking-widest text-sm">PHASE 02 // POWERTRAIN</div>
+                    <h2 class="tech-font eng-title mb-6">PURE V12</h2>
+                    <p class="text-gray-400 text-lg md:text-xl font-light leading-relaxed max-w-lg">A new 6.5-litre V12, mounted low behind the cabin, makes 700 CV at 8,250 rpm with no turbos and no electric help. The 7-speed ISR gearbox sits ahead of it in the centre tunnel and shifts in 50 milliseconds, and a Haldex IV coupling varies how much drive goes to the front wheels.</p>
+                    <div class="mt-8 flex gap-8 data-font border-t border-white/10 pt-8">
+                        <div><div class="text-3xl text-white">700</div><div class="text-xs text-gray-500 mt-1">CV AT 8,250 RPM</div></div>
+                        <div><div class="text-3xl text-white">50</div><div class="text-xs text-gray-500 mt-1">MS ISR GEAR SHIFT</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aerodynamics -->
+        <div class="eng-panel">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-7xl w-full mx-auto items-center">
+                <div class="reveal-up">
+                    <div class="data-font text-[#e6b31e] mb-4 tracking-widest text-sm">PHASE 03 // AERODYNAMICS</div>
+                    <h2 class="tech-font eng-title mb-6">SHAPING AIR</h2>
+                    <p class="text-gray-400 text-lg md:text-xl font-light leading-relaxed max-w-lg">The rear wing lies flush with the engine cover until the car needs it, then rises to one of two angles: 4° for stability at high speed, or 11° for more downforce at mid-range speeds. The side air intakes open and close on their own to match how much cooling the engine needs.</p>
+                    <div class="mt-8 data-font border-t border-white/10 pt-8">
+                        <div class="flex flex-wrap gap-3 mb-6" role="group" aria-label="Rear wing position">
+                            <button type="button" class="aero-mode nav-link px-5 py-3 text-xs tracking-widest border border-white/20 text-white hover:border-[#e6b31e]" data-deg="0" data-rise="0" aria-pressed="false">STOWED</button>
+                            <button type="button" class="aero-mode nav-link px-5 py-3 text-xs tracking-widest border border-white/20 text-white hover:border-[#e6b31e]" data-deg="4" data-rise="0.06" aria-pressed="false">4° · HIGH SPEED</button>
+                            <button type="button" class="aero-mode nav-link px-5 py-3 text-xs tracking-widest border border-[#e6b31e] bg-[#e6b31e] text-black" data-deg="11" data-rise="0.09" aria-pressed="true">11° · DOWNFORCE</button>
+                        </div>
+                        <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                            <div id="aero-bar" class="h-full bg-gradient-to-r from-transparent to-[#e6b31e] transition-all duration-700" style="width:100%"></div>
+                        </div>
+                        <div class="text-xs text-gray-500 mt-2" id="aero-label">WING AT 11°: MORE DOWNFORCE AT MID-RANGE SPEEDS</div>
+                    </div>
+                </div>
+                <div class="relative reveal-scale">
+                    <!-- ILLUSTRATION-AERO:START -->
+                    <svg viewBox="0 0 600 300" class="w-full h-auto" role="img" aria-label="Side view of the Aventador LP 700-4 with airflow lines over the body and the active rear wing">
+                        <g fill="none" stroke="url(#goldLine)" stroke-width="1.5" class="stream">
+                            <path d="M0 117.2 L10 117.2 L20 117.2 L30 117.1 L40 116.4 L50 114.4 L60 111.0 L70 106.8 L80 102.8 L90 99.2 L100 95.9 L110 92.8 L120 89.9 L130 87.1 L140 84.6 L150 82.3 L160 79.9 L170 77.1 L180 74.0 L190 70.8 L200 67.5 L210 64.3 L220 61.1 L230 57.9 L240 54.9 L250 52.4 L260 50.5 L270 49.1 L280 48.1 L290 47.3 L300 46.8 L310 46.5 L320 46.5 L330 46.6 L340 46.9 L350 47.4 L360 48.0 L370 48.7 L380 49.5 L390 50.5 L400 51.7 L410 53.2 L420 54.8 L430 56.4 L440 58.0 L450 59.7 L460 61.3 L470 62.9 L480 64.6 L490 66.2 L500 67.8 L510 69.5 L520 71.3 L530 73.2 L540 75.3 L550 77.6 L560 80.0 L570 82.4 L580 84.6 L590 86.3 L600 87.4" transform="translate(0 30)"/>
+                            <path d="M0 141.2 L10 141.2 L20 141.2 L30 141.1 L40 140.4 L50 138.4 L60 135.0 L70 130.8 L80 126.8 L90 123.2 L100 119.9 L110 116.8 L120 113.9 L130 111.1 L140 108.6 L150 106.3 L160 103.9 L170 101.1 L180 98.0 L190 94.8 L200 91.5 L210 88.3 L220 85.1 L230 81.9 L240 78.9 L250 76.4 L260 74.5 L270 73.1 L280 72.1 L290 71.3 L300 70.8 L310 70.5 L320 70.5 L330 70.6 L340 70.9 L350 71.4 L360 72.0 L370 72.7 L380 73.5 L390 74.5 L400 75.7 L410 77.2 L420 78.8 L430 80.4 L440 82.0 L450 83.7 L460 85.3 L470 86.9 L480 88.6 L490 90.2 L500 91.8 L510 93.5 L520 95.3 L530 97.2 L540 99.3 L550 101.6 L560 104.0 L570 106.4 L580 108.6 L590 110.3 L600 111.4" transform="translate(0 30)"/>
+                            <path d="M0 163.2 L10 163.2 L20 163.2 L30 163.1 L40 162.4 L50 160.4 L60 157.0 L70 152.8 L80 148.8 L90 145.2 L100 141.9 L110 138.8 L120 135.9 L130 133.1 L140 130.6 L150 128.3 L160 125.9 L170 123.1 L180 120.0 L190 116.8 L200 113.5 L210 110.3 L220 107.1 L230 103.9 L240 100.9 L250 98.4 L260 96.5 L270 95.1 L280 94.1 L290 93.3 L300 92.8 L310 92.5 L320 92.5 L330 92.6 L340 92.9 L350 93.4 L360 94.0 L370 94.7 L380 95.5 L390 96.5 L400 97.7 L410 99.2 L420 100.8 L430 102.4 L440 104.0 L450 105.7 L460 107.3 L470 108.9 L480 110.6 L490 112.2 L500 113.8 L510 115.5 L520 117.3 L530 119.2 L540 121.3 L550 123.6 L560 126.0 L570 128.4 L580 130.6 L590 132.3 L600 133.4" transform="translate(0 30)"/>
+                            <path d="M0 257 C200 255 400 255 600 257" stroke-opacity=".4"/>
+                        </g>
+                        <g transform="translate(0,30)">
+                            <use href="#aventador-body" width="600" height="260"/>
+                            <g id="aero-wing" style="transform-origin:514.3px 143.2px; transition: transform .9s cubic-bezier(.16,1,.3,1); transform: translateY(0) rotate(0deg)">
+                                <path d="M519.2 134.0 L532.8 142.9 L554.1 139.2 L553.0 138.1 L526.2 132.1 Z" fill="#e6b31e" stroke="#e6b31e" stroke-width="1" stroke-linejoin="round"/>
+                            </g>
+                            <g id="aero-struts" stroke="rgba(255,255,255,.55)" stroke-width="2" style="opacity:0; transition: opacity .4s">
+                                <line x1="526.3" y1="143.2" x2="526.3" y2="135.2"/><line x1="544.3" y1="142.2" x2="544.3" y2="134.2"/>
+                            </g>
+                        </g>
+                    </svg>
+                    <!-- ILLUSTRATION-AERO:END -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="specs" class="bg-[#030303] pt-32 pb-16 relative">
+        <div class="max-w-[1600px] mx-auto px-4 md:px-8">
+            <div class="flex justify-between items-end border-b border-white/10 pb-6 mb-12 reveal-up">
+                <h2 class="tech-font text-4xl md:text-6xl text-white uppercase"><span class="text-[#e6b31e]">TECH</span> SPECS</h2>
+                <div class="hidden md:flex gap-4 data-font text-xs tracking-widest text-gray-500">
+                    <button class="hover:text-white transition-colors nav-link border-b border-[#e6b31e] text-white pb-1">METRIC</button>
+                    <button class="hover:text-white transition-colors nav-link pb-1">IMPERIAL</button>
+                </div>
+            </div>
+
+            <div class="cyber-grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 reveal-up" style="transition-delay: 0.2s;">
+                
+                <!-- Performance -->
+                <div class="cyber-cell col-span-1 md:col-span-3 lg:col-span-1 border-b md:border-b-0 md:border-r border-white/10">
+                    <h3 class="data-font text-gray-500 text-xs tracking-[0.3em] mb-8">PERFORMANCE</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="tech-font text-2xl text-white mb-1">2.9 SEC</div>
+                            <div class="data-font text-xs text-gray-600">ACCELERATION 0-100 KM/H</div>
+                        </div>
+                        <div>
+                            <div class="tech-font text-2xl text-white mb-1">350 KM/H</div>
+                            <div class="data-font text-xs text-gray-600">TOP SPEED</div>
+                        </div>
+                        <div>
+                            <div class="tech-font text-2xl text-white mb-1">700 CV</div>
+                            <div class="data-font text-xs text-gray-600">MAXIMUM POWER AT 8,250 RPM</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graphic/Visual Center -->
+                <div class="cyber-cell col-span-1 md:col-span-3 lg:col-span-2 relative min-h-[400px] flex items-center justify-center overflow-hidden border-b md:border-b-0 md:border-r border-white/10">
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(230,179,30,0.1)_0%,transparent_70%)]"></div>
+                    
+                    <img src="assets/img/side-profile.webp" width="1800" height="1012" loading="lazy" decoding="async" class="wireframe-car absolute z-10 w-[120%] max-w-none transform translate-y-10 float-anim" alt="Aventador LP 700-4 side profile, rendered from the site's 3D model">
+                    
+                    <!-- HUD Elements -->
+                    <div class="absolute top-8 left-8 border border-[#e6b31e]/50 p-2 glass-card text-[#e6b31e] data-font text-[10px] tracking-widest animate-pulse">
+                        SYS: V12_L539<br>STAT: OPTIMAL
+                    </div>
+                    <div class="absolute bottom-8 right-8 border-t border-l border-white/20 p-2 data-font text-white text-[10px] tracking-widest text-right">
+                        WD: AWD (HALDEX IV)<br>TM: 7-SPEED ISR
+                    </div>
+                    
+                    <!-- Target Crosshairs -->
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 border border-white/5 rounded-full pointer-events-none"></div>
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-[1px] bg-white/5 pointer-events-none"></div>
+                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[1px] h-full bg-white/5 pointer-events-none"></div>
+                </div>
+
+                <!-- Dimensions & Weights -->
+                <div class="cyber-cell col-span-1 md:col-span-3 lg:col-span-1">
+                    <h3 class="data-font text-gray-500 text-xs tracking-[0.3em] mb-8">DIMENSIONS</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="tech-font text-xl text-white mb-1">4,780 MM</div>
+                            <div class="data-font text-xs text-gray-600">LENGTH</div>
+                        </div>
+                        <div>
+                            <div class="tech-font text-xl text-white mb-1">2,030 MM</div>
+                            <div class="data-font text-xs text-gray-600">WIDTH (WITHOUT MIRRORS)</div>
+                        </div>
+                        <div>
+                            <div class="tech-font text-xl text-white mb-1">1,136 MM</div>
+                            <div class="data-font text-xs text-gray-600">HEIGHT</div>
+                        </div>
+                        <div>
+                            <div class="tech-font text-xl text-white mb-1">1,575 KG</div>
+                            <div class="data-font text-xs text-gray-600">DRY WEIGHT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Grid Row -->
+            <div class="cyber-grid grid-cols-1 md:grid-cols-2 mt-px reveal-up" style="transition-delay: 0.4s;">
+                <div class="cyber-cell border-r border-white/10 flex justify-between items-center group cursor-none nav-link">
+                    <div>
+                        <div class="data-font text-gray-500 text-xs tracking-[0.2em] mb-2">DRIVETRAIN</div>
+                        <div class="tech-font text-xl text-white group-hover:text-[#e6b31e] transition-colors">PERMANENT AWD, HALDEX IV</div>
+                    </div>
+                    <svg class="w-6 h-6 text-white/20 group-hover:text-[#e6b31e] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </div>
+                <div class="cyber-cell flex justify-between items-center group cursor-none nav-link">
+                    <div>
+                        <div class="data-font text-gray-500 text-xs tracking-[0.2em] mb-2">BRAKES</div>
+                        <div class="tech-font text-xl text-white group-hover:text-[#e6b31e] transition-colors">CARBON-CERAMIC, 400 MM FRONT</div>
+                    </div>
+                    <svg class="w-6 h-6 text-white/20 group-hover:text-[#e6b31e] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="performance" class="py-32 bg-[#050505] relative border-t border-white/5">
+        <div class="max-w-[1200px] mx-auto px-6 text-center">
+            <h2 class="tech-font text-3xl md:text-5xl text-white mb-20 reveal-up">TELEMETRY DATA</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <!-- Gauge 1 -->
+                <div class="relative flex flex-col items-center gauge-container reveal-up">
+                    <svg viewBox="0 0 100 100" class="w-48 h-48 radial-progress drop-shadow-[0_0_15px_rgba(230,179,30,0.3)]">
+                        <defs>
+                            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#e6b31e" />
+                                <stop offset="100%" stop-color="#ff6b00" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="50" cy="50" r="45" class="radial-bg" />
+                        <circle cx="50" cy="50" r="45" class="radial-value" data-percentage="88" />
+                    </svg>
+                    <div class="absolute top-[40%] transform text-center">
+                        <div class="tech-font text-3xl text-white">700</div>
+                        <div class="data-font text-[10px] text-[#e6b31e] tracking-widest mt-1">CV</div>
+                    </div>
+                    <div class="mt-8 data-font tracking-widest text-sm text-gray-400">V12 POWER</div>
+                </div>
+
+                <!-- Gauge 2 -->
+                <div class="relative flex flex-col items-center gauge-container reveal-up" style="transition-delay: 0.2s;">
+                    <svg viewBox="0 0 100 100" class="w-48 h-48 radial-progress drop-shadow-[0_0_15px_rgba(230,179,30,0.3)]">
+                        <circle cx="50" cy="50" r="45" class="radial-bg" />
+                        <circle cx="50" cy="50" r="45" class="radial-value" data-percentage="97" />
+                    </svg>
+                    <div class="absolute top-[40%] transform text-center">
+                        <div class="tech-font text-3xl text-white">8250</div>
+                        <div class="data-font text-[10px] text-[#e6b31e] tracking-widest mt-1">RPM</div>
+                    </div>
+                    <div class="mt-8 data-font tracking-widest text-sm text-gray-400">RPM AT PEAK POWER</div>
+                </div>
+
+                <!-- Gauge 3 -->
+                <div class="relative flex flex-col items-center gauge-container reveal-up" style="transition-delay: 0.4s;">
+                    <svg viewBox="0 0 100 100" class="w-48 h-48 radial-progress drop-shadow-[0_0_15px_rgba(230,179,30,0.3)]">
+                        <circle cx="50" cy="50" r="45" class="radial-bg" />
+                        <circle cx="50" cy="50" r="45" class="radial-value" data-percentage="86" />
+                    </svg>
+                    <div class="absolute top-[40%] transform text-center">
+                        <div class="tech-font text-3xl text-white">690</div>
+                        <div class="data-font text-[10px] text-[#e6b31e] tracking-widest mt-1">NM</div>
+                    </div>
+                    <div class="mt-8 data-font tracking-widest text-sm text-gray-400">V12 TORQUE AT 5,500 RPM</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative h-[120vh] overflow-hidden" id="cockpit">
+        <!-- Parallax Background -->
+        <img src="assets/img/cabin.webp" width="2000" height="1125" loading="lazy" decoding="async" alt="" class="absolute inset-0 w-full h-full object-cover will-change-transform" id="cockpit-bg" style="transform: scale(1.2);">
+        <div class="absolute inset-0 bg-black/60 z-0"></div>
+
+        <div class="relative z-10 max-w-[1400px] mx-auto px-6 h-full flex flex-col justify-center">
+            <div class="mb-12 reveal-up">
+                <span class="data-font text-[#e6b31e] text-xs tracking-[0.3em] block mb-2">INTERFACE</span>
+                <h2 class="tech-font text-5xl md:text-7xl text-white">PILOT<br>EXPERIENCE</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="glass-card p-8 float-anim nav-link reveal-up" style="transition-delay: 0.1s;">
+                    <div class="w-12 h-12 border border-[#e6b31e] rounded flex items-center justify-center mb-6 text-[#e6b31e]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.5 17a8.5 8.5 0 1 1 15 0M12 13.5l4.2-4.2M7 17h10"></path><circle cx="12" cy="13.5" r="1.3" stroke-width="1.5"></circle></svg>
+                    </div>
+                    <h3 class="tech-font text-xl text-white mb-3">TFT INSTRUMENT DISPLAY</h3>
+                    <p class="data-font text-sm text-gray-400 leading-relaxed">A TFT-LCD screen takes the place of analogue dials, keeping speed, revs and gear in the driver's direct line of sight.</p>
+                </div>
+                
+                <div class="glass-card p-8 float-anim-delay nav-link reveal-up" style="transition-delay: 0.3s; transform: translateY(40px);">
+                    <div class="w-12 h-12 border border-[#e6b31e] rounded flex items-center justify-center mb-6 text-[#e6b31e]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"></path><circle cx="15" cy="6" r="2" stroke-width="1.5"></circle><circle cx="9" cy="12" r="2" stroke-width="1.5"></circle><circle cx="17" cy="18" r="2" stroke-width="1.5"></circle></svg>
+                    </div>
+                    <h3 class="tech-font text-xl text-white mb-3">STRADA · SPORT · CORSA</h3>
+                    <p class="data-font text-sm text-gray-400 leading-relaxed">Drive Select changes how the ISR gearbox shifts, how heavy the steering feels and how much the stability control allows. Corsa adds launch control.</p>
+                </div>
+
+                <div class="glass-card p-8 float-anim nav-link reveal-up md:hidden lg:block" style="transition-delay: 0.5s;">
+                    <div class="w-12 h-12 border border-[#e6b31e] rounded flex items-center justify-center mb-6 text-[#e6b31e]">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3.5v7.5M6.7 6.8a7.5 7.5 0 1 0 10.6 0"></path></svg>
+                    </div>
+                    <h3 class="tech-font text-xl text-white mb-3">START UNDER A RED COVER</h3>
+                    <p class="data-font text-sm text-gray-400 leading-relaxed">Flip up the red cover on the centre console, the way a fighter pilot would, and press the button underneath to wake the V12.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section id="reserve" class="relative overflow-hidden border-t border-white/5 bg-[#030303]">
+        <img src="assets/img/rear34.webp" width="2000" height="1125" loading="lazy" decoding="async" alt="" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#030303] via-[#030303]/85 to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 md:py-40">
+            <div class="max-w-2xl reveal-up">
+                <p class="data-font text-[#e6b31e] text-sm tracking-[0.3em] mb-6">PRIVATE VIEWING</p>
+                <h2 class="tech-font text-4xl md:text-6xl font-bold text-white leading-[1.05] mb-8">DRIVE THE AVENTADOR</h2>
+                <p class="text-gray-300 text-lg font-light leading-relaxed mb-12 max-w-xl">The LP 700-4 coupé was built from 2011 to 2016. Book a private viewing and test drive with your build.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button type="button" class="open-booking nav-link px-10 py-5 bg-[#e6b31e] text-black tech-font text-xs font-bold tracking-[0.2em] hover:bg-white transition-colors shadow-[0_10px_40px_rgba(230,179,30,0.35)]">
+                        BOOK A TEST DRIVE
+                    </button>
+                    <a href="configure.html" class="nav-link px-10 py-5 border border-white/20 text-white tech-font text-xs tracking-[0.2em] hover:border-[#e6b31e] hover:text-[#e6b31e] transition-colors text-center">
+                        CONFIGURE YOURS
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking dialog -->
+    <dialog class="booking" id="booking" aria-labelledby="booking-title">
+        <div class="p-8 md:p-10">
+            <div class="flex items-start justify-between gap-6 mb-8">
+                <div>
+                    <h3 id="booking-title" class="tech-font text-2xl text-white">BOOK A TEST DRIVE</h3>
+                    <p class="demo-note">Demo form: nothing is sent or stored.</p>
+                </div>
+                <button type="button" class="close-booking text-gray-400 hover:text-white p-2 -m-2" aria-label="Close">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="1.5" d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
+            </div>
+            <form id="booking-form" class="space-y-4" novalidate>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <label class="block"><span class="data-font text-xs text-gray-400 tracking-widest">FULL NAME</span>
+                        <input class="field mt-2" name="name" autocomplete="name" required></label>
+                    <label class="block"><span class="data-font text-xs text-gray-400 tracking-widest">EMAIL</span>
+                        <input class="field mt-2" type="email" name="email" autocomplete="email" required></label>
+                </div>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <label class="block"><span class="data-font text-xs text-gray-400 tracking-widest">PHONE</span>
+                        <input class="field mt-2" type="tel" name="phone" autocomplete="tel"></label>
+                    <label class="block"><span class="data-font text-xs text-gray-400 tracking-widest">COUNTRY</span>
+                        <input class="field mt-2" name="country" autocomplete="country-name" required></label>
+                </div>
+                <div class="block"><span class="data-font text-xs text-gray-400 tracking-widest" id="booking-build-label">YOUR BUILD</span>
+                    <p class="field build-box mt-2" id="booking-build" aria-labelledby="booking-build-label">No build yet. <a href="configure.html">Build yours</a> first, or send the request without one.</p>
+                    <input type="hidden" name="build" id="booking-build-input"></div>
+                <p class="data-font text-xs text-red-400 hidden" id="booking-error" role="alert"></p>
+                <button type="submit" class="w-full mt-2 px-6 py-4 bg-[#e6b31e] text-black tech-font text-xs font-bold tracking-[0.2em] hover:bg-white transition-colors">REQUEST TEST DRIVE</button>
+            </form>
+            <div id="booking-done" class="hidden text-center py-8" role="status">
+                <div class="w-14 h-14 mx-auto mb-6 rounded-full border border-[#e6b31e] grid place-items-center text-[#e6b31e]">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <h4 class="tech-font text-xl text-white mb-3">DEMO COMPLETE</h4>
+                <p class="data-font text-sm text-gray-400">This booking form is a demo, so nothing was sent.</p>
+                <button type="button" class="close-booking mt-8 px-8 py-3 border border-white/20 tech-font text-xs tracking-[0.2em] hover:border-[#e6b31e] hover:text-[#e6b31e] transition-colors">CLOSE</button>
+            </div>
+        </div>
+    </dialog>
+
+    <footer class="bg-[#000] pt-32 pb-12 relative border-t border-[#e6b31e]/20 overflow-hidden">
+        <!-- Glow effect -->
+        <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[80vw] h-64 bg-[#e6b31e] opacity-[0.03] blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-12 mb-20 reveal-up">
+                <div class="max-w-md text-center md:text-left">
+                    <h3 class="tech-font text-3xl text-white mb-6">JOIN AURELION</h3>
+                    <p class="data-font text-gray-400 text-sm leading-relaxed mb-8">Hear when AURELION adds new views, colours and starter builds.</p>
+                    
+                    <form class="relative nav-link" onsubmit="event.preventDefault(); this.querySelector('button').innerText='THANKS';">
+                        <input type="email" placeholder="YOUR EMAIL" aria-label="Your email" required
+                               class="w-full bg-white/5 border border-white/10 text-white data-font text-xs p-4 focus:outline-none focus:border-[#e6b31e] transition-colors rounded-none placeholder-gray-600">
+                        <button type="submit" class="absolute right-0 top-0 h-full px-6 bg-[#e6b31e] text-[#000] tech-font text-xs font-bold hover:bg-white transition-colors">
+                            SUBSCRIBE
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <img class="footer-logo mb-6 ml-auto mr-auto md:mr-0" src="assets/brand/aurelion-logo.svg" width="1485" height="126" alt="AURELION" loading="lazy">
+                    <div class="flex flex-col gap-3 data-font text-xs tracking-widest text-gray-500">
+                        <a href="#engineering" class="hover:text-[#e6b31e] transition-colors nav-link">ENGINEERING</a>
+                        <a href="configure.html" class="hover:text-[#e6b31e] transition-colors nav-link">CUSTOMIZATION</a>
+                        <a href="#specs" class="hover:text-[#e6b31e] transition-colors nav-link">SPECIFICATIONS</a>
+                        <a href="#reserve" class="hover:text-[#e6b31e] transition-colors nav-link">BOOK A TEST DRIVE</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center data-font text-[10px] text-gray-600 tracking-widest reveal-up">
+                <div>
+                    <p class="footer-legal normal-case tracking-normal">AURELION is not affiliated with or endorsed by Automobili Lamborghini S.p.A. Lamborghini and Aventador are trademarks of their owner.</p>
+                    <p class="mt-2 normal-case tracking-normal text-gray-700 footer-legal">3D model and renders: based on <a href="https://sketchfab.com/3d-models/free-lamborghini-aventador-lp-700-4-df69d51ba10146f79c8c765810ca2132" target="_blank" rel="noopener" class="underline hover:text-gray-400 nav-link">“( FREE ) Lamborghini Aventador LP 700-4”</a> by SDC PERFORMANCE™️, licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener" class="underline hover:text-gray-400 nav-link">CC BY 4.0</a>. Modified: materials adjusted, rear wing separated, parts simplified and compressed.</p>
+                </div>
+                <div class="flex gap-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors nav-link">LEGAL</a>
+                    <a href="#" class="hover:text-white transition-colors nav-link">PRIVACY</a>
+                    <a href="#" class="hover:text-white transition-colors nav-link">COOKIES</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/site.js"></script>
+</body>
+</html>
