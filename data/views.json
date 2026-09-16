@@ -1,0 +1,67 @@
+{
+  "size": [
+    1600,
+    900
+  ],
+  "order": [
+    "front34",
+    "side",
+    "rear34",
+    "wheel",
+    "cabin",
+    "night"
+  ],
+  "views": {
+    "front34": {
+      "label": "Front ¾",
+      "states": [
+        "default"
+      ],
+      "interior": false
+    },
+    "side": {
+      "label": "Side",
+      "states": [
+        "lowered",
+        "raised"
+      ],
+      "interior": false
+    },
+    "rear34": {
+      "label": "Rear ¾",
+      "states": [
+        "stowed",
+        "p4",
+        "p11"
+      ],
+      "interior": false
+    },
+    "wheel": {
+      "label": "Wheel",
+      "states": [
+        "default"
+      ],
+      "interior": false
+    },
+    "cabin": {
+      "label": "Cabin",
+      "states": [
+        "default"
+      ],
+      "interior": true
+    },
+    "night": {
+      "label": "Night",
+      "states": [
+        "default"
+      ],
+      "interior": false
+    }
+  },
+  "defaults": {
+    "wheels": "silver",
+    "calipers": "black",
+    "interior": "nero-ade"
+  },
+  "path": "assets/views/{view}-{state}-{layer}.webp"
+}
