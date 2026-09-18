@@ -40,7 +40,7 @@
             const btn = wrap.querySelector('.magnetic-btn');
             wrap.addEventListener('mousemove', (e) => {
                 const r = wrap.getBoundingClientRect();
-                btn.style.transition = 'none';
+                btn.style.transition = 'transform 0.1s ease-out';
                 btn.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.4}px, ${(e.clientY - r.top - r.height / 2) * 0.4}px)`;
             });
             wrap.addEventListener('mouseleave', () => {
