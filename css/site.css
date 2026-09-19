@@ -68,6 +68,7 @@
             position: relative; display: inline-block; padding: 20px;
         }
         .magnetic-btn {
+  will-change: transform;
             position: relative; display: flex; align-items: center; justify-content: center;
             background: var(--glass-bg); border: 1px solid var(--glass-border);
             backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
