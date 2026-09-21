@@ -52,7 +52,7 @@ export class ImageStage extends EventTarget {
     return layers;
   }
 
-  async show(view, { transition = 'fade', duration = 450, sweep = false } = {}) {
+  async show(view, { transition = 'fade', duration = 420, sweep = false } = {}) {
     const token = ++this.token;
     const layers = this.layersFor(view);
     this.container.classList.add('is-busy');
