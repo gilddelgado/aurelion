@@ -49,6 +49,7 @@ export function createState(catalog) {
         return `${g.label}: ${o.name}${finish}`;
       });
     },
+    // permalink short summary
     shortSummary() {
       const p = api.option('paint'), w = api.option('wheels'), c = api.option('calipers');
       return `${p.name} · ${w.name} wheels · ${c.name} calipers`;
