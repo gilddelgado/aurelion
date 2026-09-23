@@ -297,3 +297,6 @@
                 if (document.readyState === 'complete') start(); else window.addEventListener('load', start, { once: true });
             }
         }
+
+// perf: // video loop observer
+       
