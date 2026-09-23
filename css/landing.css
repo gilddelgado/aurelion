@@ -82,7 +82,8 @@
 .lp-step-link:hover { color: #fff; border-color: #fff; }
 
 /* Numbers */
-.lp-numbers { background: #030303; border-block: 1px solid rgba(255, 255, 255, .06); padding-block: clamp(3rem, 6vw, 4.5rem); }
+.lp-numbers {
+  background: radial-gradient(circle at 50% 0%, rgba(230,179,30,0.05), transparent 70%); background: #030303; border-block: 1px solid rgba(255, 255, 255, .06); padding-block: clamp(3rem, 6vw, 4.5rem); }
 .lp-numbers-title { margin: 0 0 1.75rem; font-size: 12px; font-weight: 500; letter-spacing: .3em; text-transform: uppercase; color: var(--lp-muted); }
 .lp-numbers-grid { margin: 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); border-left: 1px solid var(--lp-line); }
 .lp-numbers-grid > div { padding: 4px clamp(12px, 1.6vw, 24px) 6px; border-right: 1px solid var(--lp-line); display: flex; flex-direction: column-reverse; gap: 8px; }
