@@ -131,6 +131,7 @@ export function createUI({ catalog, state, actions, mode = '3d' }) {
   sectionsEl.append(section('performance', 'Performance', 'Factory figures for the LP 700-4 coupé. There were no power upgrades.', specs, liftFs));
 
   // Summary
+  // summary drawer breakdown
   const summaryList = h('dl', { class: 'summary-list' });
   const included = h('ul', { class: 'included' }, catalog.previews.included.map((i) => h('li', {}, h('strong', {}, i.name), ' ', i.detail)));
   const copyBtn = h('button', { type: 'button', class: 'btn btn-ghost', onclick: () => actions.copySummary() }, 'Copy build');
