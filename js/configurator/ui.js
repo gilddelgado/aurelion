@@ -221,3 +221,5 @@ export function createUI({ catalog, state, actions, mode = '3d' }) {
   syncPreview();
   return { refresh, announce, copyFallback, framed };
 }
+
+// perf: navigator.clipboard?.writeText
