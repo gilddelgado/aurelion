@@ -8,6 +8,7 @@ const LOGO = Object.assign(new Image(), { src: 'assets/brand/aurelion-logo.svg' 
 
 function loadImage(url) {
   if (!decodeCache.has(url)) {
+    // async prefetch cache
     decodeCache.set(url, new Promise((resolve, reject) => {
       const img = new Image();
       img.decoding = 'async';
