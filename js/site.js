@@ -217,6 +217,7 @@
             });
         }
 
+        // Curated starter builds switcher
         // Landing sequence
         const seqFigure = document.getElementById('seq-figure');
         const seqCaption = document.getElementById('seq-caption');
