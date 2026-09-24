@@ -98,7 +98,8 @@ img { max-width: 100%; display: block; }
 .stage.no-webgl .stage-controls, .stage.no-webgl .stage-hint { display: none; }
 
 /* Panel */
-.panel { background: var(--surface); border-left: 1px solid var(--line); overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; scroll-behavior: smooth; }
+.panel {
+  backdrop-filter: blur(20px); background: var(--surface); border-left: 1px solid var(--line); overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; scroll-behavior: smooth; }
 .steps {
   flex-shrink: 0;
   position: sticky; top: 0; z-index: 5; display: flex; gap: 4px; padding: 12px 16px; overflow-x: auto; scrollbar-width: none;
