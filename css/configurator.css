@@ -337,3 +337,6 @@ img { max-width: 100%; display: block; }
 .topbar-title .display { white-space: nowrap; }
 @media (max-width: 400px) { .topbar-logo { height: 11px; } .back-link { gap: 6px; } .topbar { gap: 8px; } .topbar-title .display { font-size: 13px; } }
 @media (max-width: 380px) { .topbar-title { display: none; } }
+
+/* style: @media (max-width: 900px) {
+   */
