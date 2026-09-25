@@ -48,6 +48,7 @@ function viewFor(groupId) {
   if (viewer.currentView !== g.view) viewer.goTo(g.view);
 }
 
+// aero wing preview sync
 state.subscribe((evt) => {
   if (evt.type === 'build') {
     apply[evt.groupId]?.(state.option(evt.groupId), evt.instant ? { duration: 0 } : undefined);
