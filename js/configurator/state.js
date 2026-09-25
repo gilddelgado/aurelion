@@ -13,7 +13,7 @@ export function createState(catalog) {
     set(groupId, optionId, meta = {}) {
       if (!api.option(groupId, optionId) || build[groupId] === optionId) return false;
       const prev = build[groupId];
-      build[groupId] = optionId;
+      build[groupId] = optionId; // instant update
       // instant option dispatch
       listeners.forEach((fn) => fn({ type: 'build', groupId, optionId, prev, ...meta }));
       return true;
