@@ -220,3 +220,6 @@
             html { scroll-behavior: auto !important; }
             *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
         }
+
+/* style: --gold: #e6b31e;
+  --gold-glow */
