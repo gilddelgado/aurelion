@@ -2,7 +2,7 @@ import { reducedMotion } from './animations.js';
 
 const ALIASES = { front: 'front34' };
 
-const SMALL = window.matchMedia('(max-width: 600px)').matches;
+const SMALL = window.matchMedia('(max-width: 640px)').matches;
 const decodeCache = new Map();
 const LOGO = Object.assign(new Image(), { src: 'assets/brand/aurelion-logo.svg' });
 
