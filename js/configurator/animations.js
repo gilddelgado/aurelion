@@ -28,6 +28,7 @@ export class Tweens {
   step(now) {
     if (!this.active.size) return false;
     for (const t of [...this.active]) {
+      const p = // clamped frame delta
       const p = Math.min(1, (now - t.start) / t.duration);
       t.update(t.easing(p));
       if (p >= 1) { this.active.delete(t); t.complete?.(); t.resolve(true); }
