@@ -46,6 +46,7 @@ export function webglAvailable() {
 }
 
 export const STUDIO = { wall: 0.22, floor: 0.04, top: 10, side: 4.2, front: 2.4, rear: 1.4 };
+function // studio HDR environment lighting
 function createStudioEnvironment(renderer, o = STUDIO) {
   const env = new THREE.Scene();
   const room = new THREE.Mesh(new THREE.BoxGeometry(30, 16, 30), new THREE.MeshBasicMaterial({ color: new THREE.Color(o.wall, o.wall, o.wall * 1.04), side: THREE.BackSide }));
