@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>AURELION · Aventador Configurator (3D)</title>
+  <meta name="description" content="AURELION: build an Aventador LP 700-4 part by part in 3D.">
+  <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png">
+  <meta name="theme-color" content="#050505">
+  <link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/configurator.css">
+  <script type="importmap">
+    { "imports": { "three": "./vendor/three/build/three.module.js", "three/addons/": "./vendor/three/examples/jsm/" } }
+  </script>
+  <link rel="modulepreload" href="js/configurator/main.js">
+  <meta name="stage" content="3d">
+  <meta name="model-src" content="assets/models/aventador-lp700-4.glb">
+  <link rel="preload" href="assets/models/aventador-lp700-4.glb" as="fetch" crossorigin>
+</head>
+<body>
+  <a class="skip-link" href="#sections">Skip to options</a>
+
+  <header class="topbar">
+    <a class="back-link" href="index.html" aria-label="Back to the AURELION home page"><span aria-hidden="true">←</span><img class="topbar-logo" src="assets/brand/aurelion-logo.svg" width="1485" height="126" alt=""></a>
+    <p class="topbar-title"><span class="display">LP 700-4</span> <span class="topbar-sub">Configurator</span></p>
+  </header>
+
+  <main class="layout">
+    <section class="stage" id="stage" aria-label="3D preview">
+      <canvas id="stage-canvas" role="img" aria-label="3D model of the Aventador LP 700-4 in your current build" aria-describedby="stage-desc"></canvas>
+      <p id="stage-desc" class="sr-only"></p>
+
+      <div class="stage-status" id="stage-status" role="status">
+        <p class="status-title" id="load-label">Loading the car</p>
+        <div class="load-track" aria-hidden="true"><div class="load-bar" id="load-bar"></div></div>
+      </div>
+
+      <p class="stage-chip" id="stage-chip" aria-hidden="true"></p>
+      <p class="stage-hint" aria-hidden="true">Drag to rotate · pinch or scroll to zoom</p>
+      <a class="stage-mode-link stage-mode-link-3d" href="configure.html" data-keep-build>Back to the faster picture view</a>
+
+      <div class="stage-controls">
+        <div class="views" role="group" aria-label="Camera view">
+          <button type="button" data-view="front34" aria-pressed="false">Front ¾</button>
+          <button type="button" data-view="side" aria-pressed="false">Side</button>
+          <button type="button" data-view="rear34" aria-pressed="false">Rear ¾</button>
+          <button type="button" data-view="wheel" aria-pressed="false">Wheel</button>
+          <button type="button" data-view="cabin" aria-pressed="false">Cabin</button>
+        </div>
+        <div class="stage-toggles" role="group" aria-label="Preview">
+          <button type="button" class="pill" data-preview="doors" aria-pressed="false">Doors</button>
+          <button type="button" class="pill" data-preview="lights" aria-pressed="false">Lights</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="panel" aria-label="Build options">
+      <nav class="steps" id="steps" aria-label="Configurator steps"></nav>
+      <div id="sections" tabindex="-1"></div>
+      <footer class="panel-foot" id="panel-foot"></footer>
+      <div class="buildbar">
+        <div class="buildbar-text">
+          <span class="buildbar-label">Your build</span>
+          <span class="buildbar-name" id="build-name"></span>
+        </div>
+        <a class="btn btn-gold btn-sm" href="#summary" id="review-link">Review</a>
+      </div>
+    </aside>
+  </main>
+
+  <p class="toast" id="toast" role="status" hidden></p>
+  <div id="announcer" class="sr-only" aria-live="polite"></div>
+  <script>
+    if (location.protocol === 'file:') {
+      document.getElementById('stage-status').dataset.kind = 'error';
+      document.getElementById('load-label').textContent = 'Open this page from a web server';
+      const track = document.getElementById('load-bar').parentElement;
+      track.hidden = true;
+      track.insertAdjacentHTML('afterend', '<p>Browsers block the configurator when the file is opened straight from a folder. Run <b>python3 -m http.server</b> in the project folder, then go to localhost:8000.</p>');
+    }
+  </script>
+  <script type="module" src="js/configurator/main.js"></script>
+</body>
+</html>
