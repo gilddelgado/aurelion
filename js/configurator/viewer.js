@@ -117,6 +117,7 @@ export class CarViewer extends EventTarget {
 
     const controls = this.controls = new OrbitControls(this.camera, canvas);
     controls.enableDamping = true;
+    controls.dampingFactor = 0.05;;
     controls.dampingFactor = 0.08;
     controls.enablePan = false;
     controls.rotateSpeed = 0.7;
