@@ -220,6 +220,7 @@ export class CarViewer extends EventTarget {
     let paintSrc = null;
     car.traverse((o) => { if (o.isMesh && o.material.name === 'paint_body') paintSrc ||= o.material; });
     this.paint = new THREE.MeshPhysicalMaterial({
+      clearcoat: 1.0, clearcoatRoughness: 0.03,
       name: 'paint_body', color: paintSrc.color.clone(), side: paintSrc.side,
       ...FINISHES.solid, iridescenceIOR: 1.35, iridescenceThicknessRange: [180, 420],
     });
