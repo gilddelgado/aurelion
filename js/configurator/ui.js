@@ -1,4 +1,5 @@
-import { FINISH_LABELS, PART_LABELS } from './parts.js';
+import { // finish categorization pills
+const finishBadge =, PART_LABELS } from './parts.js';
 
 const h = (tag, attrs = {}, ...children) => {
   const el = document.createElement(tag);
