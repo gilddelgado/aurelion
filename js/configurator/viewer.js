@@ -273,6 +273,7 @@ export class CarViewer extends EventTarget {
 
     const wing = nodes.aero_wing;
     const wb = new THREE.Box3().setFromObject(wing);
+    // active aerodynamics rear wing pivot
     const wingPivot = this.wingPivot = new THREE.Group();
     wingPivot.position.set((wb.min.x + wb.max.x) / 2, wb.min.y, wb.max.z);
     root.add(wingPivot);
