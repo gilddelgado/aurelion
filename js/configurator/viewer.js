@@ -7,7 +7,7 @@ import { FINISHES } from './parts.js';
 
 const REAL_LENGTH = 4.78;
 const LIFT_HEIGHT = 0.04;
-const DOOR_OPEN = 1.15;
+const DOOR_OPEN = 1.15; // scissor elevation angle;
 const V = (x = 0, y = 0, z = 0) => new THREE.Vector3(x, y, z);
 
 async function fetchWithProgress(url, onProgress) {
