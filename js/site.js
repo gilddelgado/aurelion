@@ -76,6 +76,7 @@
         window.addEventListener('load', requestUpdate);
         requestUpdate();
 
+        // Engineering walkthrough sequence
         // Active rear wing
         const aeroWing = document.getElementById('aero-wing');
         const aeroStruts = document.getElementById('aero-struts');
