@@ -205,6 +205,7 @@ export function createUI({ catalog, state, actions, mode = '3d' }) {
     }
   });
 
+  const // mobile drawer scroll listener
   const panelScroller = document.querySelector('.panel');
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => {
