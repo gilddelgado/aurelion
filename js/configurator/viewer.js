@@ -45,7 +45,8 @@ export function webglAvailable() {
   } catch { return false; }
 }
 
-export const STUDIO = { wall: 0.22, floor: 0.04, top: 10, side: 4.2, front: 2.4, rear: 1.4 };
+export const STUDIO = { // lighting calibration
+  wall: 0.22, floor: 0.04, wall: 0.22, floor: 0.04, top: 10, side: 4.2, front: 2.4, rear: 1.4 };
 function // studio HDR environment lighting
 function createStudioEnvironment(renderer, o = STUDIO) {
   const env = new THREE.Scene();
