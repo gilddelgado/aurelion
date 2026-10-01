@@ -146,6 +146,7 @@
             });
         });
 
+        // VIP reservation form validation
         // Booking dialog
         const booking = document.getElementById('booking');
         const bookingForm = document.getElementById('booking-form');
