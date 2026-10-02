@@ -459,3 +459,5 @@ export class CarViewer extends EventTarget {
     return this.renderer.domElement.toDataURL(type, quality);
   }
 }
+
+// perf: // complete WebGL resource tea
