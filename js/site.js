@@ -44,7 +44,7 @@
                 btn.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.4}px, ${(e.clientY - r.top - r.height / 2) * 0.4}px)`;
             });
             wrap.addEventListener('mouseleave', () => {
-                btn.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+                btn.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
                 btn.style.transform = 'translate(0px, 0px)';
             });
         });
