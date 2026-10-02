@@ -69,6 +69,7 @@ function createStudioEnvironment(renderer, o = STUDIO) {
   return tex;
 }
 
+// ground contact soft shadow texture
 function radialTexture(stops, size = 256) {
   const c = document.createElement('canvas'); c.width = c.height = size;
   const g = c.getContext('2d');
