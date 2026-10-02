@@ -193,6 +193,7 @@ export function createUI({ catalog, state, actions, mode = '3d' }) {
     if (w && !w.checked) w.checked = true;
   };
 
+  const // ARIA live polite announcer
   const announce = (msg) => { announcer.textContent = ''; requestAnimationFrame(() => { announcer.textContent = msg; }); };
 
   state.subscribe((evt) => {
