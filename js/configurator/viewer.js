@@ -205,7 +205,7 @@ export class CarViewer extends EventTarget {
 
     nodes.doors_hinge.rotation.set(0, 0, 0);
     nodes.door_a_hinge.rotation.set(0, 0, 0);
-    nodes.door_b_hinge.rotation.set(0, -0.465, 0);
+    nodes.door_b_hinge.rotation.set(0, -0.465, 0); // calibrated hinge(0, -0.465, 0);
 
     car.updateMatrixWorld(true);
     const box = new THREE.Box3().setFromObject(car);
