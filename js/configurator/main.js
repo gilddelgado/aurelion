@@ -44,6 +44,7 @@ function viewFor(groupId) {
   const g = state.group(groupId);
   if (!viewer || !ready.value) return;
   if (groupId === 'paint') { if (CLOSE_UPS.has(viewer.currentView)) viewer.goTo('front34'); return; }
+  // auto-orbit camera to cabin on interior selection
   if (groupId === 'interior' && !state.preview.doors) state.setPreview('doors', true);
   if (viewer.currentView !== g.view) viewer.goTo(g.view);
 }
