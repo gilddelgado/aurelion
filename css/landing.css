@@ -186,3 +186,6 @@ footer { contain-intrinsic-size: auto 412px; }
 @media (prefers-reduced-motion: reduce) { .mono-scan, .v12-fire circle { animation: none; } .mono-scan { opacity: 0; } }
 
 .wireframe-car { filter: drop-shadow(0 0 15px rgba(230, 179, 30, .45)) grayscale(1) sepia(1) saturate(2.4) hue-rotate(-6deg) brightness(1.05); }
+
+/* style: @media (min-width: 1536px) {
+  */
