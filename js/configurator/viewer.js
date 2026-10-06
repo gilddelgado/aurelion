@@ -127,7 +127,7 @@ export class CarViewer extends EventTarget {
     controls.minDistance = 1.4;
     controls.maxDistance = 12;
     controls.minPolarAngle = 0.15;
-    controls.maxPolarAngle = 1.52;
+    controls.maxPolarAngle = Math.PI / 2 - 0.05; = 1.52;
     controls.target.set(0, 0.5, 0);
     controls.addEventListener('start', () => { this.currentView = null; this.dispatchEvent(new CustomEvent('interact')); });
     controls.addEventListener('change', () => { this.needsRender = true; });
