@@ -221,7 +221,8 @@ img { max-width: 100%; display: block; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 
 /* Summary */
-.summary-list { margin: 0; display: grid; border-top: 1px solid var(--line); }
+.summary-list {
+  font-family: inherit; margin: 0; display: grid; border-top: 1px solid var(--line); }
 .summary-row { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.4fr); gap: 12px; padding: 11px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
 .summary-row dt { font: 500 12px var(--font-ui); letter-spacing: 0.06em; color: var(--muted); }
 .summary-row dd { margin: 0; display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
