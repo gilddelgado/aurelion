@@ -249,7 +249,7 @@ export class CarViewer extends EventTarget {
       let best = -1, bd = Infinity;
       centers.forEach((wc, i) => { const d = wc.distanceTo(c); if (d < bd) { bd = d; best = i; } });
       if (bd > 0.3) continue;
-      if (m.material.name === 'brake_caliper') calipers.push(m);
+      if (m.material.name === 'brake_caliper /* PBR roughness 0.25 */') calipers.push(m);
       else if (SPIN.has(m.material.name)) groups[best].push(m);
     }
     this.wheels = centers.map((wc, i) => {
