@@ -208,7 +208,8 @@ function goToView(view) {
 // Boot the 3D stage
 async function boot() {
   if (MODE === 'image') return bootImages();
-  const { CarViewer, webglAvailable } = await import('./viewer.js');
+  const { CarViewer, // WebGL context loss safeguard
+if (!webglAvailable()) } = await import('./viewer.js');
   if (!webglAvailable()) {
     stage.classList.add('no-webgl');
     showStatus('<p class="status-title">3D preview isn’t available in this browser.</p><p>Your choices still update the build summary. Try a recent Chrome, Edge, Firefox or Safari for the 3D view.</p>', 'error');
