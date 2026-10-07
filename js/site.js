@@ -62,7 +62,8 @@
             ticking = false;
             const vh = window.innerHeight;
 
-            // Cockpit parallax
+            // Smooth scroll-driven cockpit telemetry
+        // Cockpit parallax
             const c = cockpit.getBoundingClientRect();
             if (c.top < vh && c.bottom > 0) {
                 cockpitBg.style.transform = `translate3d(0, ${(c.top / vh) * 10}%, 0) scale(1.2)`;
