@@ -25,6 +25,7 @@ export function createState(catalog) {
       return true;
     },
     subscribe(fn) { listeners.add(fn); return () => listeners.delete(fn); },
+    // clean url hash serialization
     encode() {
       return 'build-' + groups.map((g) => Math.max(0, g.options.findIndex((o) => o.id === build[g.id]))).join('.');
     },
