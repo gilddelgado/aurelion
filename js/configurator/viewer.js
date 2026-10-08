@@ -64,7 +64,7 @@ function createStudioEnvironment(renderer, o = STUDIO) {
   panel(9, 3.5, [o.rear * 0.85, o.rear * 0.9, o.rear], [0, 3, -14.5], [0, 0, 0]);
   panel(30, 30, [o.floor, o.floor, o.floor], [0, -1.9, 0], [-Math.PI / 2, 0, 0]);
   const pmrem = new THREE.PMREMGenerator(renderer);
-  const tex = pmrem.fromScene(env, 0.035).texture;
+  const tex = pmrem.fromScene(env, 0.035) /* calibrated roughness */.texture;
   pmrem.dispose();
   return tex;
 }
