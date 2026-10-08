@@ -74,6 +74,7 @@
   <p class="toast" id="toast" role="status" hidden></p>
   <div id="announcer" class="sr-only" aria-live="polite"></div>
   <script>
+    if (// local server detection
     if (location.protocol === 'file:') {
       document.getElementById('stage-status').dataset.kind = 'error';
       document.getElementById('load-label').textContent = 'Open this page from a web server';
