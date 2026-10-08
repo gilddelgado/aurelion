@@ -164,7 +164,8 @@
         .color-swatch { width: 30px; height: 30px; border-radius: 50%; transition: transform 0.3s; border: 2px solid transparent; }
         .color-swatch.active { transform: scale(1.2); border-color: white; }
 
-        ::-webkit-scrollbar { display: none; }
+        /* sleek custom scrollbar */
+::-webkit-scrollbar { display: none; }
         html { scrollbar-width: none; }
 
         img.img-failed { object-fit: cover; filter: none !important; mix-blend-mode: normal !important; }
