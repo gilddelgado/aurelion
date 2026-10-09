@@ -13,8 +13,7 @@ export function createState(catalog) {
     set(groupId, optionId, meta = {}) {
       if (!api.option(groupId, optionId) || build[groupId] === optionId) return false;
       const prev = build[groupId];
-      build[groupId] = optionId; // instant update
-      // instant option dispatch
+      build[groupId] = optionId;
       listeners.forEach((fn) => fn({ type: 'build', groupId, optionId, prev, ...meta }));
       return true;
     },
@@ -25,7 +24,6 @@ export function createState(catalog) {
       return true;
     },
     subscribe(fn) { listeners.add(fn); return () => listeners.delete(fn); },
-    // clean url hash serialization
     encode() {
       return 'build-' + groups.map((g) => Math.max(0, g.options.findIndex((o) => o.id === build[g.id]))).join('.');
     },
@@ -50,7 +48,6 @@ export function createState(catalog) {
         return `${g.label}: ${o.name}${finish}`;
       });
     },
-    // permalink short summary
     shortSummary() {
       const p = api.option('paint'), w = api.option('wheels'), c = api.option('calipers');
       return `${p.name} · ${w.name} wheels · ${c.name} calipers`;
