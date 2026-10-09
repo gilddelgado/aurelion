@@ -2,13 +2,12 @@ import { reducedMotion } from './animations.js';
 
 const ALIASES = { front: 'front34' };
 
-const SMALL = window.matchMedia('(max-width: 640px)').matches;
+const SMALL = window.matchMedia('(max-width: 600px)').matches;
 const decodeCache = new Map();
 const LOGO = Object.assign(new Image(), { src: 'assets/brand/aurelion-logo.svg' });
 
 function loadImage(url) {
   if (!decodeCache.has(url)) {
-    // async prefetch cache
     decodeCache.set(url, new Promise((resolve, reject) => {
       const img = new Image();
       img.decoding = 'async';
@@ -53,7 +52,7 @@ export class ImageStage extends EventTarget {
     return layers;
   }
 
-  async show(view, { transition = 'fade', duration = 420, sweep = false } = {}) {
+  async show(view, { transition = 'fade', duration = 450, sweep = false } = {}) {
     const token = ++this.token;
     const layers = this.layersFor(view);
     this.container.classList.add('is-busy');
