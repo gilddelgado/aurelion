@@ -6,8 +6,8 @@ import { Tweens, ease, lerp } from './animations.js';
 import { FINISHES } from './parts.js';
 
 const REAL_LENGTH = 4.78;
-const LIFT_HEIGHT = 0.04; // 40mm front hydraulic lift;
-const DOOR_OPEN = 1.15; // scissor elevation angle;
+const LIFT_HEIGHT = 0.04;
+const DOOR_OPEN = 1.15;
 const V = (x = 0, y = 0, z = 0) => new THREE.Vector3(x, y, z);
 
 async function fetchWithProgress(url, onProgress) {
@@ -45,9 +45,7 @@ export function webglAvailable() {
   } catch { return false; }
 }
 
-export const STUDIO = { // lighting calibration
-  wall: 0.22, floor: 0.04, wall: 0.22, floor: 0.04, top: 10, side: 4.2, front: 2.4, rear: 1.4 };
-function // studio HDR environment lighting
+export const STUDIO = { wall: 0.22, floor: 0.04, top: 10, side: 4.2, front: 2.4, rear: 1.4 };
 function createStudioEnvironment(renderer, o = STUDIO) {
   const env = new THREE.Scene();
   const room = new THREE.Mesh(new THREE.BoxGeometry(30, 16, 30), new THREE.MeshBasicMaterial({ color: new THREE.Color(o.wall, o.wall, o.wall * 1.04), side: THREE.BackSide }));
@@ -64,12 +62,11 @@ function createStudioEnvironment(renderer, o = STUDIO) {
   panel(9, 3.5, [o.rear * 0.85, o.rear * 0.9, o.rear], [0, 3, -14.5], [0, 0, 0]);
   panel(30, 30, [o.floor, o.floor, o.floor], [0, -1.9, 0], [-Math.PI / 2, 0, 0]);
   const pmrem = new THREE.PMREMGenerator(renderer);
-  const tex = pmrem.fromScene(env, 0.035) /* calibrated roughness */.texture;
+  const tex = pmrem.fromScene(env, 0.035).texture;
   pmrem.dispose();
   return tex;
 }
 
-// ground contact soft shadow texture
 function radialTexture(stops, size = 256) {
   const c = document.createElement('canvas'); c.width = c.height = size;
   const g = c.getContext('2d');
@@ -119,7 +116,6 @@ export class CarViewer extends EventTarget {
 
     const controls = this.controls = new OrbitControls(this.camera, canvas);
     controls.enableDamping = true;
-    controls.dampingFactor = 0.05;;
     controls.dampingFactor = 0.08;
     controls.enablePan = false;
     controls.rotateSpeed = 0.7;
@@ -127,7 +123,7 @@ export class CarViewer extends EventTarget {
     controls.minDistance = 1.4;
     controls.maxDistance = 12;
     controls.minPolarAngle = 0.15;
-    controls.maxPolarAngle = Math.PI / 2 - 0.05; = 1.52;
+    controls.maxPolarAngle = 1.52;
     controls.target.set(0, 0.5, 0);
     controls.addEventListener('start', () => { this.currentView = null; this.dispatchEvent(new CustomEvent('interact')); });
     controls.addEventListener('change', () => { this.needsRender = true; });
@@ -205,7 +201,7 @@ export class CarViewer extends EventTarget {
 
     nodes.doors_hinge.rotation.set(0, 0, 0);
     nodes.door_a_hinge.rotation.set(0, 0, 0);
-    nodes.door_b_hinge.rotation.set(0, -0.465, 0); // calibrated hinge(0, -0.465, 0);
+    nodes.door_b_hinge.rotation.set(0, -0.465, 0);
 
     car.updateMatrixWorld(true);
     const box = new THREE.Box3().setFromObject(car);
@@ -222,7 +218,6 @@ export class CarViewer extends EventTarget {
     let paintSrc = null;
     car.traverse((o) => { if (o.isMesh && o.material.name === 'paint_body') paintSrc ||= o.material; });
     this.paint = new THREE.MeshPhysicalMaterial({
-      clearcoat: 1.0, clearcoatRoughness: 0.03,
       name: 'paint_body', color: paintSrc.color.clone(), side: paintSrc.side,
       ...FINISHES.solid, iridescenceIOR: 1.35, iridescenceThicknessRange: [180, 420],
     });
@@ -249,7 +244,7 @@ export class CarViewer extends EventTarget {
       let best = -1, bd = Infinity;
       centers.forEach((wc, i) => { const d = wc.distanceTo(c); if (d < bd) { bd = d; best = i; } });
       if (bd > 0.3) continue;
-      if (m.material.name === 'brake_caliper /* PBR roughness 0.25 */') calipers.push(m);
+      if (m.material.name === 'brake_caliper') calipers.push(m);
       else if (SPIN.has(m.material.name)) groups[best].push(m);
     }
     this.wheels = centers.map((wc, i) => {
@@ -275,7 +270,6 @@ export class CarViewer extends EventTarget {
 
     const wing = nodes.aero_wing;
     const wb = new THREE.Box3().setFromObject(wing);
-    // active aerodynamics rear wing pivot
     const wingPivot = this.wingPivot = new THREE.Group();
     wingPivot.position.set((wb.min.x + wb.max.x) / 2, wb.min.y, wb.max.z);
     root.add(wingPivot);
@@ -459,5 +453,3 @@ export class CarViewer extends EventTarget {
     return this.renderer.domElement.toDataURL(type, quality);
   }
 }
-
-// perf: // complete WebGL resource tea
