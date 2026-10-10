@@ -20,7 +20,6 @@
   <link rel="preload" href="assets/views/front34-default-paint-giallo-evros.webp" as="image" fetchpriority="high" media="(min-width: 601px)">
 </head>
 <body class="pictures">
-  <!-- skip link for screen readers -->
   <a class="skip-link" href="#sections">Skip to options</a>
 
   <header class="topbar">
@@ -41,7 +40,7 @@
       </div>
 
       <p class="stage-chip" id="stage-chip" aria-hidden="true"></p>
-      <a class="stage-mode-link" href="configure-3d.html" data-keep-build>Rotate in 3D <span class="stage-mode-size">? about 10 MB</span> <span class="stage-mode-size">· about 10 MB</span></a>
+      <a class="stage-mode-link" href="configure-3d.html" data-keep-build>Rotate in 3D <span class="stage-mode-size">· about 10 MB</span></a>
 
       <div class="stage-controls">
         <div class="views" role="group" aria-label="Camera view">
@@ -74,7 +73,6 @@
   <p class="toast" id="toast" role="status" hidden></p>
   <div id="announcer" class="sr-only" aria-live="polite"></div>
   <script>
-    if (// local server detection
     if (location.protocol === 'file:') {
       document.getElementById('stage-status').dataset.kind = 'error';
       document.getElementById('load-label').textContent = 'Open this page from a web server';
