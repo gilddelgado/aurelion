@@ -40,11 +40,11 @@
             const btn = wrap.querySelector('.magnetic-btn');
             wrap.addEventListener('mousemove', (e) => {
                 const r = wrap.getBoundingClientRect();
-                btn.style.transition = 'transform 0.1s ease-out';
+                btn.style.transition = 'none';
                 btn.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.4}px, ${(e.clientY - r.top - r.height / 2) * 0.4}px)`;
             });
             wrap.addEventListener('mouseleave', () => {
-                btn.style.transition = 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+                btn.style.transition = 'transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
                 btn.style.transform = 'translate(0px, 0px)';
             });
         });
@@ -62,8 +62,7 @@
             ticking = false;
             const vh = window.innerHeight;
 
-            // Smooth scroll-driven cockpit telemetry
-        // Cockpit parallax
+            // Cockpit parallax
             const c = cockpit.getBoundingClientRect();
             if (c.top < vh && c.bottom > 0) {
                 cockpitBg.style.transform = `translate3d(0, ${(c.top / vh) * 10}%, 0) scale(1.2)`;
@@ -77,7 +76,6 @@
         window.addEventListener('load', requestUpdate);
         requestUpdate();
 
-        // Engineering walkthrough sequence
         // Active rear wing
         const aeroWing = document.getElementById('aero-wing');
         const aeroStruts = document.getElementById('aero-struts');
@@ -147,7 +145,6 @@
             });
         });
 
-        // VIP reservation form validation
         // Booking dialog
         const booking = document.getElementById('booking');
         const bookingForm = document.getElementById('booking-form');
@@ -220,7 +217,6 @@
             });
         }
 
-        // Curated starter builds switcher
         // Landing sequence
         const seqFigure = document.getElementById('seq-figure');
         const seqCaption = document.getElementById('seq-caption');
@@ -301,6 +297,3 @@
                 if (document.readyState === 'complete') start(); else window.addEventListener('load', start, { once: true });
             }
         }
-
-// perf: // video loop observer
-       
