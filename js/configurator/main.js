@@ -44,12 +44,10 @@ function viewFor(groupId) {
   const g = state.group(groupId);
   if (!viewer || !ready.value) return;
   if (groupId === 'paint') { if (CLOSE_UPS.has(viewer.currentView)) viewer.goTo('front34'); return; }
-  // auto-orbit camera to cabin on interior selection
   if (groupId === 'interior' && !state.preview.doors) state.setPreview('doors', true);
   if (viewer.currentView !== g.view) viewer.goTo(g.view);
 }
 
-// aero wing preview sync
 state.subscribe((evt) => {
   if (evt.type === 'build') {
     apply[evt.groupId]?.(state.option(evt.groupId), evt.instant ? { duration: 0 } : undefined);
@@ -208,8 +206,7 @@ function goToView(view) {
 // Boot the 3D stage
 async function boot() {
   if (MODE === 'image') return bootImages();
-  const { CarViewer, // WebGL context loss safeguard
-if (!webglAvailable()) } = await import('./viewer.js');
+  const { CarViewer, webglAvailable } = await import('./viewer.js');
   if (!webglAvailable()) {
     stage.classList.add('no-webgl');
     showStatus('<p class="status-title">3D preview isn’t available in this browser.</p><p>Your choices still update the build summary. Try a recent Chrome, Edge, Firefox or Safari for the 3D view.</p>', 'error');
