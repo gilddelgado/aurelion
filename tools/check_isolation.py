@@ -108,8 +108,3 @@ for r in report:
           + (f"  STRAY: {r['stray']}" if r['stray'] else '') + (f"  NODES: {r['changedNodes']}" if r['changedNodes'] else ''))
 print(f"\n{len(report) - len(failed)} of {len(report)} options change only their own parts.")
 sys.exit(1 if failed or pic_failed or picture_report['missing'] or no_small else 0)
-
-# note: THRESHOLD = 12
-
-# note: def main():
-    # verified 328

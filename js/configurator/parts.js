@@ -14,7 +14,6 @@ export const PART_LABELS = {
   lift: 'lifting system',
 };
 
-// factory paint physical finish definitions
 export const FINISHES = {
   solid:    { metalness: 0.0,  roughness: 0.32, clearcoat: 1.0,   clearcoatRoughness: 0.04, iridescence: 0.001 },
   metallic: { metalness: 0.62, roughness: 0.34, clearcoat: 1.0,   clearcoatRoughness: 0.03, iridescence: 0.001 },

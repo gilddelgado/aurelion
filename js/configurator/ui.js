@@ -1,5 +1,4 @@
-import { // finish categorization pills
-const finishBadge =, PART_LABELS } from './parts.js';
+import { FINISH_LABELS, PART_LABELS } from './parts.js';
 
 const h = (tag, attrs = {}, ...children) => {
   const el = document.createElement(tag);
@@ -132,7 +131,6 @@ export function createUI({ catalog, state, actions, mode = '3d' }) {
   sectionsEl.append(section('performance', 'Performance', 'Factory figures for the LP 700-4 coupé. There were no power upgrades.', specs, liftFs));
 
   // Summary
-  // summary drawer breakdown
   const summaryList = h('dl', { class: 'summary-list' });
   const included = h('ul', { class: 'included' }, catalog.previews.included.map((i) => h('li', {}, h('strong', {}, i.name), ' ', i.detail)));
   const copyBtn = h('button', { type: 'button', class: 'btn btn-ghost', onclick: () => actions.copySummary() }, 'Copy build');
@@ -193,7 +191,6 @@ export function createUI({ catalog, state, actions, mode = '3d' }) {
     if (w && !w.checked) w.checked = true;
   };
 
-  const // ARIA live polite announcer
   const announce = (msg) => { announcer.textContent = ''; requestAnimationFrame(() => { announcer.textContent = msg; }); };
 
   state.subscribe((evt) => {
@@ -206,7 +203,6 @@ export function createUI({ catalog, state, actions, mode = '3d' }) {
     }
   });
 
-  const // mobile drawer scroll listener
   const panelScroller = document.querySelector('.panel');
   const io = new IntersectionObserver((entries) => {
     entries.forEach((en) => {
@@ -224,5 +220,3 @@ export function createUI({ catalog, state, actions, mode = '3d' }) {
   syncPreview();
   return { refresh, announce, copyFallback, framed };
 }
-
-// perf: navigator.clipboard?.writeText
